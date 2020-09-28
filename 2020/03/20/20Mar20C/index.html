@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>初识 Java 开发【Java 学习笔记 03】 | WARINGHU&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 *.java，我们可以建立一个目录保存所有的程序源代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识 Java 开发【Java 学习笔记 03】">
+<meta property="og:url" content="http://example.com/2020/03/20/20Mar20C/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 *.java，我们可以建立一个目录保存所有的程序源代码">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-20T01:46:51.000Z">
+<meta property="article:modified_time" content="2020-04-07T06:02:43.491Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="WARINGHU&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WARINGHU&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20Mar20C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/20/20Mar20C/" class="article-date">
+  <time datetime="2020-03-20T01:46:51.000Z" itemprop="datePublished">2020-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识 Java 开发【Java 学习笔记 03】
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>编写 Java 程序可以不使用特定编辑器，所有 Java 程序的后缀都是 <code>*.java</code>，我们可以建立一个目录保存所有的程序源代码</p>
+<a id="more"></a>
+
+<h1 id="Java-编程起步"><a href="#Java-编程起步" class="headerlink" title="Java 编程起步"></a>Java 编程起步</h1><p>定义第一个程序代码：</p>
+<p><code>Hello.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World !&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Java 程序需要经过两次处理才可以正常执行：</p>
+<ul>
+<li>对源代码程序进行编译：<code>javac Hello.java</code>，编译之后会生成一个 <code>Hello.class</code> 的字节码文件，整个过程原理就是利用 JVM 编译出一套与操作平台无关的字节码文件（<code>*.class</code>）</li>
+<li>在 JVM 上进行程序的解释：<code>java Hello</code>，<strong>注意：</strong> 这里解释的是字节码文件，字节码文件的后缀（<code>*.class</code>）是不需要编写的</li>
+</ul>
+<p>解释一下第一个程序：</p>
+<ol>
+<li>在 Java 程序开发中最基础的单元是类，所有的程序都必须封装在类当中执行，而类的基本定义语法如下：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="class"><span class="keyword">class</span> 类名称 </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在程序中定义的类名称是：<code>Hello</code>，类的定义有两种形式：</p>
+<ul>
+<li><code>public class 类名称 &#123;&#125;</code>：类名称必须与文件名称保持一致，在一个 <code>*.java</code> 文件里只能有一个 <code>public class</code> 定义</li>
+<li><code>class 类名称 &#123;&#125;</code>：类名称可以与文件名称不一致，但是编译后的 <code>*.class</code> 的名称是 <code>calss</code> 定义的类，解释的时候要求解释生成的 <code>*.class</code> 字节码文件，在一个 <code>*.java</code> 文件里面可以有多个 <code>class</code> 定义，并且编译之后会生成不同的 <code>*.class</code> 文件</li>
+</ul>
+<p><strong>注意：</strong> 关于源代码类定义的问题：</p>
+<ul>
+<li>在项目开发中，很少会出现在一个 <code>*.java</code> 源代码里面定义多个 <code>class</code> 类的情况，所以一般在一个 <code>*.java</code> 源代码里就定义一个 <code>public class</code> 类就够了</li>
+<li>Java 语言有着明确的要求，定义类名称的时候要求每一个单词的首字母必须大写，eg. HelloWorld、TestDemo 这样才符合标准</li>
+</ul>
+<ol start="2">
+<li>主方法：是所有程序执行的起点，并且一定要定义在类中，Java 的主方法定义：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名称 </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 程序的代码由此开始执行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> <code>String args[]</code> &lt;=&gt; <code>String [] args</code></p>
+<p>必须记住主方法怎么写，即使没有代码补全也能写出来，主方法所在的类统一称为 “主类”，所有的 “主类” 都使用 <code>public class 类名称 &#123;&#125;</code> 来定义</p>
+<ol start="3">
+<li>屏幕打印（系统输出）：可以直接在命令行方式下进行内容的显示，有如下两种语法：</li>
+</ol>
+<ul>
+<li>输出之后追加换行：<code>System.out.println(输出内容);</code></li>
+<li>输出之后不追加换行：<code>System.out.print(输出内容);</code></li>
+</ul>
+<h1 id="JShell-工具"><a href="#JShell-工具" class="headerlink" title="JShell 工具"></a>JShell 工具</h1><p>Shell 是脚本程序的含义，在很多编程语言里面为了方便使用者进行代码开发，都会有 Shell 交互式编程环境，可能只是为了一些简短的程序验证，但是在 Java 里面需要编写很多的结构代码才能实现，所以为了解决这样的麻烦，提供了 JShell 指令，直接 cmd 执行指令 <code>jshell</code> 即可</p>
+<p>除了可以直接在 JShell 命令之中进行程序的编写之外，也可以将一些内容交给一些文件来进行保存</p>
+<p>eg. 在 <code>D:/hello.txt </code> 写入如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system.out.println(&quot;hello&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>在 JShell 执行指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;open d:&#x2F;hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>屏幕能够成功输出 <code>hello</code></p>
+<p>所以使用 JShell 只需要编写核心结构的代码即可，减少了对于结构化的需求，执行指令 <code>/exit</code> 即可退出 JShell 交互式界面</p>
+<h1 id="CLASSPATH-环境属性"><a href="#CLASSPATH-环境属性" class="headerlink" title="CLASSPATH 环境属性"></a>CLASSPATH 环境属性</h1><p>CLASSPATH 完整理解非常复杂，这里暂时了解其概念</p>
+<p>eg. 在 <code>D:/JavaCode</code> 下有一个叫 <code>Hello.class</code> 的字节码文件，当前用户所在的目录为 <code>D:/JavaCode</code>，那么在这种情况之下可以直接使用 <code>java</code> 命令进行 <code>Hello.class</code> 字节码文件的解释，但是如果现在用户脱离了这个目录，去到了 <code>C:/</code> （C 盘目录下并没有 <code>Hello.class</code> 字节码文件），如果再次执行程序解释，会出现错误提示：<code>找不到或无法加载主类 Hello</code></p>
+<p>如果我们要执行不同目录下的程序，就需要依靠 CLASSPATH 环境属性</p>
+<p>定义 CLASSPATH 环境属性：<code>SET CLASSPATH = D:/JavaCode</code></p>
+<p>设置了 CLASSPATH 之后，这个时候在 Java 程序解释的时候会自动通过 CLASSPATH 所设置的路径进行类的加载，所以可知：JVM 解释程序的时候需要得到 CLASSPATH 的支持</p>
+<p>但是在默认情况下，所有解释的类都是从当前所在的目录中加载的，所以可知：CLASSPATH 的默认设置为当前所在目录加载类文件，很明显如果在非当前目录设置 CLASSPATH 就会使整个系统操作混乱，所以最好采用默认的设置，如果这时候想只通过当前目录加载，则可以将 CLASSPATH 设置为 <code>.</code></p>
+<p>eg. 设置从当前所在路径加载类 <code>SET CLASSPATH = .</code></p>
+<p>有些时候如果安装了一些与 Java 开发相关的程序，它可能会自动修改默认的 CLASSPATH，所以就需要自己设置回来</p>
+<p><strong>注意：</strong> 现在 CLASSPATH 是在一个命令行下的配置，如果该命令行关闭了，那么相关的属性配置也将消失，所以应该将其定义为全局属性，则可以直接在系统中追加一个属性信息</p>
+<p>配置方法：新建用户变量 <code>CLASSPATH = .</code></p>
+<p>PATH 和 CLASSPATH 的区别？</p>
+<ul>
+<li>PATH：是操作系统提供的路径配置，定义所有可执行程序的路径</li>
+<li>CLASSPATH：是 JRE 提供的，用于定义 Java 程序解释时的类加载路径，默认设置为当前目录加载，可以通过 <code>SETCLASSPATH = 路径</code> 的命令形式来进行定义</li>
+</ul>
+<p>JVM 解释字节码文件的寻访过程：JVM ➡ CLASSPATH 定义的路径 ➡ 加载字节码文件，所以 CLASSPATH 是 Java 定义的环境属性，是在 Java 程序解释的时候使用的</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/03/20/20Mar20C/" data-id="ckfm6p8sn001d0otscelk9x2y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/20/20Mar20D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java 基本概念【Java 学习笔记 04】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/20/20Mar20B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">搭建 Java 开发环境【Java 学习笔记 02】</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/">互联网生活优化指南</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BA%AA%E8%A6%81/">博客纪要</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebDAV/" rel="tag">WebDAV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" rel="tag">坚果云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">编码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 12.5px;">Blog</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/WebDAV/" style="font-size: 10px;">WebDAV</a> <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" style="font-size: 10px;">坚果云</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 10px;">数据处理</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" style="font-size: 12.5px;">算法分析</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 15px;">计算机图形学</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/23/20May23A/">Excel 公式应用与数据处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/20Apr29A/">减治法与排序</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/28/20Apr28A/">算法分析——蛮力法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/16/20Apr16A/">反走样算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/15/20Apr15A/">区域填充算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 waringhu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

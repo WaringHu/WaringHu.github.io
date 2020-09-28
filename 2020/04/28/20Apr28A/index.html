@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>算法分析——蛮力法 | WARINGHU&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最直接最根本的算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析——蛮力法">
+<meta property="og:url" content="http://example.com/2020/04/28/20Apr28A/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="最直接最根本的算法">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/01.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/02.png">
+<meta property="article:published_time" content="2020-04-28T06:26:04.000Z">
+<meta property="article:modified_time" content="2020-09-28T06:42:10.983Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="算法分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/00.png">
+  
+    <link rel="alternate" href="/atom.xml" title="WARINGHU&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WARINGHU&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20Apr28A" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/28/20Apr28A/" class="article-date">
+  <time datetime="2020-04-28T06:26:04.000Z" itemprop="datePublished">2020-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法分析——蛮力法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>没简介多简洁😴</p>
+<a id="more"></a>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>定义：从问题的描述和定义中直接得出解的方法</p>
+</blockquote>
+<p>eg. 冒泡排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">BubbleSort(A[0, ..., n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 该算法用冒泡排序对给定数组排序</span><br><span class="line">&#x2F;&#x2F; 输入：一个可排序的数组 A[0, ..., n-1]</span><br><span class="line">&#x2F;&#x2F; 输出：非降序排列的数组 A[0, ..., n-1]</span><br><span class="line"></span><br><span class="line">for i⬅0 to n-2 do</span><br><span class="line">    for j⬅0 to n-2-i do</span><br><span class="line">        if A[j+1] &lt; A[j]</span><br><span class="line">            swap A[j] and A[j+1]</span><br></pre></td></tr></table></figure>
+
+<p>一般用来解决一些比较广阔的领域问题，并不是针对某一特定领域的问题，也能够用于产生问题的一些合理方法</p>
+<p>通常当问题的实例规模比较小，或者说问题的数据量比较小的时候，蛮力法的代价比较小，可以选择它来解决问题</p>
+<p>蛮力法的结果可以被用作其他高效算法的衡量标准，来比较这些高效算法的效率和正确性</p>
+<h1 id="最近对和凸包问题"><a href="#最近对和凸包问题" class="headerlink" title="最近对和凸包问题"></a>最近对和凸包问题</h1><blockquote>
+<p>最近对问题：在包含 N 个点的集合中找出距离最近的两个点</p>
+</blockquote>
+<p>蛮力法：</p>
+<p>$$d(P_{i}, P_{j}) = \sqrt{(x_{i} - x_{j})^2 + (y_{i} - y_{j})^2}$$</p>
+<p>分别计算每两个点之间的距离，找出其中距离最小的两个点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BruteForceClosestPoints(P)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 输入：一个包好 n(n &gt;&#x3D; 2) 个点坐标的列表 P</span><br><span class="line">&#x2F;&#x2F; 输出：两个距离最近的点的坐标</span><br><span class="line"></span><br><span class="line">dmin ⬅ ∞</span><br><span class="line">for i⬅1 to n-1 do</span><br><span class="line">    for j⬅i+1 to n do</span><br><span class="line">        d ⬅ sqrt((xi - xj)^2 + (yi -yj)^2)</span><br><span class="line">        if d &lt; dmin</span><br><span class="line">            dmin ⬅ d;</span><br><span class="line">            index1 ⬅ i;</span><br><span class="line">            index2 ⬅ j</span><br><span class="line">return index1, index2</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：$n^2$</p>
+<blockquote>
+<p>凸包：给定点集中的一个近似</p>
+</blockquote>
+<p>一个点集合 S 的凸包是包含点集合 S 的最小的凸集合，我们说一个点集合是凸起的，就是说以集合中任意两点 P 和 Q 为端点的线段都属于这个集合</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/00.png" alt="00.png"></p>
+<p>如图，凸包就是边界点连接围成的区域，也就是以点集合中某些点为顶点的一个凸多边形，这些顶点被称为极点</p>
+<p>思路：任意选择点集合中的两个点 $P_{i}$ 和 $P_{j}$，如果发现点集合中其他的点都位于穿过连接这两个点的直线的同侧，那么这两个点的连线 $P_{i}P_{j}$ 就是凸包边界的一部分，找出所有满足条件的点</p>
+<p>$P_{i}$ 和 $P_{j}$ 的直线方程：$ax + by = c$</p>
+<p>如果把点集合中的其他点的坐标代入式子：$ax + by - c$，如果结果符号相同，就表示其他点都位于 $P_{i}$ 和 $P_{j}$ 的同侧，那么这两个点 $P_{i}$ 和 P_{j} 就是凸包的一部分</p>
+<p>由于对于 N 个点的集合来说，不同点的选择有 $\frac{n(n-1)}{2}$ 个，每次选择需要对其他 $n-2$ 个点做测试，因此这种算法的时间复杂度为：$n^3$</p>
+<h1 id="穷举问题"><a href="#穷举问题" class="headerlink" title="穷举问题"></a>穷举问题</h1><p>eg. 旅行商问题</p>
+<p>一个旅行商，从一个城市出发，经过城市与城市之间的道路，将所有的城市访问一次来推销自己的商品，然后回到最初出发的城市，<strong>问：如何制定一个距离最短的访问顺序来节约旅行成本？</strong></p>
+<p>思路（穷举查找）：把所有访问城市可能的顺序列举出来，计算每一个顺序的距离，最后选择距离最短的一条</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/01.png" alt="01.png"></p>
+<p>对于要经过 n 个城市的旅行商问题，路径的可能性是 $(n-1)!$</p>
+<p>eg. 背包问题</p>
+<p>有 N 个物品，每个物品都有重量和价值，重量：$w_{1}, w_{2}, …, w_{n}$，价值：$v_{1}, v_{2}, …, v_{n}$，有一个容量为 W 的背包，这个背包的承重不能超过 W，<strong>求：如何装入物品才能使背包不超重且价值最大？</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr28A/02.png" alt="02.png"></p>
+<p>如果物品的数量是 n 个，穷举的数量是 $2^n-1$</p>
+<h1 id="结"><a href="#结" class="headerlink" title="结"></a>结</h1><p>通过问题的描述或者问题的概念，制定出一种简单而直接的解决问题的方案</p>
+<p>但是：这只能针对规模很小的问题才具有适用性和简单性</p>
+<p><strong>通常来说蛮力法的效率都不够高</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/04/28/20Apr28A/" data-id="ckfm6p8sa000q0ots7rgw2jsv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/29/20Apr29A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          减治法与排序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/16/20Apr16A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">反走样算法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/">互联网生活优化指南</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BA%AA%E8%A6%81/">博客纪要</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebDAV/" rel="tag">WebDAV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" rel="tag">坚果云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">编码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 12.5px;">Blog</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/WebDAV/" style="font-size: 10px;">WebDAV</a> <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" style="font-size: 10px;">坚果云</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 10px;">数据处理</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" style="font-size: 12.5px;">算法分析</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 15px;">计算机图形学</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/23/20May23A/">Excel 公式应用与数据处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/20Apr29A/">减治法与排序</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/28/20Apr28A/">算法分析——蛮力法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/16/20Apr16A/">反走样算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/15/20Apr15A/">区域填充算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 waringhu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

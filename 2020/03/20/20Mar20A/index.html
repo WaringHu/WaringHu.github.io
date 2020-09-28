@@ -5,14 +5,20 @@
   
 
   
-  <title>Archives: 2020 | WARINGHU&#39;S BLOG</title>
+  <title>Java 语言简介【Java 学习笔记 01】 | WARINGHU&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WARINGHU&#39;S BLOG">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="Java 之所以可以得到持续的发展力以及良好的生态系统，这完全取决于 Java 自身的技术特征：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 语言简介【Java 学习笔记 01】">
+<meta property="og:url" content="http://example.com/2020/03/20/20Mar20A/index.html">
 <meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="Java 之所以可以得到持续的发展力以及良好的生态系统，这完全取决于 Java 自身的技术特征：">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-20T01:28:44.000Z">
+<meta property="article:modified_time" content="2020-04-07T06:03:56.785Z">
 <meta property="article:author" content="waringhu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="WARINGHU&#39;S BLOG" type="application/atom+xml">
@@ -62,216 +68,80 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/23/20May23A/" class="archive-article-date">
-  <time datetime="2020-05-23T11:31:23.000Z" itemprop="datePublished">May 23</time>
+        <section id="main"><article id="post-20Mar20A" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/20/20Mar20A/" class="article-date">
+  <time datetime="2020-03-20T01:28:44.000Z" itemprop="datePublished">2020-03-20</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/20May23A/">Excel 公式应用与数据处理</a>
+    <h1 class="article-title" itemprop="name">
+      Java 语言简介【Java 学习笔记 01】
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/29/20Apr29A/" class="archive-article-date">
-  <time datetime="2020-04-29T03:08:08.000Z" itemprop="datePublished">Apr 29</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/20Apr29A/">减治法与排序</a>
-    </h1>
-  
+        <p>Java 之所以可以得到持续的发展力以及良好的生态系统，这完全取决于 Java 自身的技术特征：</p>
+<a id="more"></a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/28/20Apr28A/" class="archive-article-date">
-  <time datetime="2020-04-28T06:26:04.000Z" itemprop="datePublished">Apr 28</time>
-</a>
+<h1 id="Java-的主要特点"><a href="#Java-的主要特点" class="headerlink" title="Java 的主要特点"></a>Java 的主要特点</h1><ol>
+<li>是一个行业内通用的技术实现标准，Java 本身是一个半开源产品，很多厂商能够接触到 Java 的底层，使得 Java 开发更加透明</li>
+<li>是一门面向对象编程语言，使得 Java 语言语法结构更加方便开发者接受，且这些面向对象的设计思想还在不断进行着扩充（不同的 JDK 版本）</li>
+<li>提供有方便的内存回收处理机制，像一些编程语言里需要明确的手工进行对象的回收与释放，否则程序将不能正常提供支持，但是 Java 提供自动的内存回收操作，这样会更加方便（但是又涉及到优化方面的问题）</li>
+<li>避免了复杂的指针问题，而使用更加简单的引用来代替指针，指针虽然是一种高效的内存处理模式，但是需要很强的逻辑分析，而 Java 在设计之初就考虑到了这一点，所以直接利用引用就可以简化指针的处理，而引用也是在初学过程中最为麻烦，最难以理解的部分</li>
+<li>Java 是为数不多支持多线程开发的编程语言，这样就可以使得单位时间内处理的性能得到提升（性能的提升并不是绝对的），多线程开发也是 Java 开发之中最难以理解的一部分，而正确的多线程处理才是提升处理性能的核心所在</li>
+<li>Java 提供有高效的网络处理能力，可以基于 NIO 实现更加高效的数据传输处理</li>
+<li>Java 具有良好的可移植性，这样就可以提升一个程序的适用范围</li>
+</ol>
+<h1 id="Java-的可移植性"><a href="#Java-的可移植性" class="headerlink" title="Java 的可移植性"></a>Java 的可移植性</h1><p>这是 Java 语言最大的特点，指的是同一个程序可以在不同的操作系统之间进行任意的部署，以此降低了开发的难度</p>
+<p>想要实现可移植性的控制，主要是依靠 JVM （Java 虚拟机）</p>
+<p>Java 虚拟机是一个由软件和硬件模拟出来的计算机，所有的程序只要有 Java 虚拟机的支持，就可以实现程序的执行，并且不同的操作系统上会有不同的 Java 虚拟机存在，这样就可以实现移植性</p>
+<p>所有 Java 程序的解释都要求放在 JVM 里处理</p>
+<p>所有 *.java 的源代码程序最终都需要经过编译后才能使用，但是编译完成的程序代码并不是绑定在某个具体操作系统上的程序，而是一种通用性的程序，这种通用性的程序就是 JVM 能够识别的代码</p>
+<p>Java 编译器只针对 JVM 产生 *.class 文件，独立于平台之外，所以 *.class 只针对不同的 JVM 生成，由 JVM 去适应平台</p>
+<p>所有的 Java 程序并不是直接运行在操作系统上，而是通过 JVM 执行，这样比直接在操作系统上执行程序的处理速度要慢，但是随着硬件技术的提高，这些问题可以忽略，只是依然存在 JVM 的调优问题</p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/20Apr28A/">算法分析——蛮力法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/16/20Apr16A/" class="archive-article-date">
-  <time datetime="2020-04-16T03:50:14.000Z" itemprop="datePublished">Apr 16</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/03/20/20Mar20A/" data-id="ckfm6p8se000v0ots9z7y3tm1" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/16/20Apr16A/">反走样算法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/15/20Apr15A/" class="archive-article-date">
-  <time datetime="2020-04-15T08:35:07.000Z" itemprop="datePublished">Apr 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/20Apr15A/">区域填充算法</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/20/20Mar20B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          搭建 Java 开发环境【Java 学习笔记 02】
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/13/20Apr13B/" class="archive-article-date">
-  <time datetime="2020-04-13T11:29:17.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/20Apr13B/">认识算法分析</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/13/20Apr13A/" class="archive-article-date">
-  <time datetime="2020-04-13T03:07:31.000Z" itemprop="datePublished">Apr 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/13/20Apr13A/">多边形扫描转换算法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/09/20Apr09A/" class="archive-article-date">
-  <time datetime="2020-04-09T02:14:01.000Z" itemprop="datePublished">Apr 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/09/20Apr09A/">【分享】阿里巴巴 Java 开发手册</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/08/20Apr08B/" class="archive-article-date">
-  <time datetime="2020-04-08T09:01:56.000Z" itemprop="datePublished">Apr 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/20Apr08B/">博客错误日志</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/08/20Apr08A/" class="archive-article-date">
-  <time datetime="2020-04-07T18:46:08.000Z" itemprop="datePublished">Apr 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/08/20Apr08A/">直线段扫描转换算法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         

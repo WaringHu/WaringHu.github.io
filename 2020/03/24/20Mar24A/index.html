@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java 类与对象【Java 学习笔记 09】 | WARINGHU&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java 语言最大的特点在于面向对象的编程设计，并且面向对象的编程设计也在由于 Java 自身的发展而不断发展，同时很多最初不支持面向对象的编程语言都开始转向了面向对象编程，但也有人认为面向过程编程会更好，或者是使用函数式编程会更好">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 类与对象【Java 学习笔记 09】">
+<meta property="og:url" content="http://example.com/2020/03/24/20Mar24A/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="Java 语言最大的特点在于面向对象的编程设计，并且面向对象的编程设计也在由于 Java 自身的发展而不断发展，同时很多最初不支持面向对象的编程语言都开始转向了面向对象编程，但也有人认为面向过程编程会更好，或者是使用函数式编程会更好">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-24T06:34:08.000Z">
+<meta property="article:modified_time" content="2020-04-07T06:06:02.753Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="WARINGHU&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WARINGHU&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20Mar24A" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/24/20Mar24A/" class="article-date">
+  <time datetime="2020-03-24T06:34:08.000Z" itemprop="datePublished">2020-03-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java 类与对象【Java 学习笔记 09】
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java 语言最大的特点在于面向对象的编程设计，并且面向对象的编程设计也在由于 Java 自身的发展而不断发展，同时很多最初不支持面向对象的编程语言都开始转向了面向对象编程，但也有人认为面向过程编程会更好，或者是使用函数式编程会更好</p>
+<a id="more"></a>
+
+<h1 id="面向对象简介"><a href="#面向对象简介" class="headerlink" title="面向对象简介"></a>面向对象简介</h1><p>最早出现并且流行至今的编程语言主要有 C、C++、Java，其中 C 语言已经成为了面向过程开发的代表，C++ 和 Java 都是面向对象的编程语言</p>
+<p>所谓的面向过程指的是面对一个问题的解决方案，更多情况下是不会做出重用的设计思考，而面向对象的主要设计思想就是模块化设计，并且可以重用配置，在整个面向对象的设计里面，更多的情况下考虑的是标准，在使用的时候根据标准进行拼装</p>
+<p>面向对象还有三个主要特征：</p>
+<ul>
+<li>封装性：内部的操作对外部不可见，当内部的操作都不可直接使用的时候才是最安全的</li>
+<li>继承性：在已有结构的基础上继续进行功能的扩充</li>
+<li>多态性：是在继承性的基础上扩充的概念，指的是类型的转换处理</li>
+</ul>
+<p>在进行面向对象开发时还有三个步骤：</p>
+<ul>
+<li>OOA：面向对象分析</li>
+<li>OOD：面向对象设计</li>
+<li>OOP：面向对象编程</li>
+</ul>
+<h1 id="类与对象简介"><a href="#类与对象简介" class="headerlink" title="类与对象简介"></a>类与对象简介</h1><p>面向对象的核心就是类与对象，类是对某一类事物的共性的抽象概念，而对象描述的是一个具体的产物，对象与对象之间不同的是对象各自的属性，每一个属性的集合就构成了对象，但是所有的属性都是群体的定义，而群体的定义就形成了一个类</p>
+<p>类是一个模板，而对象就是类可以使用的实例，先定义类才可以定义对象，但是类不能直接使用，对象可以直接使用，在类之中一般都会有两个组成：</p>
+<ul>
+<li>成员属性（Field）：也可以称为属性</li>
+<li>成员行为（Method）：定义对象具有的处理行为</li>
+</ul>
+<h1 id="类与对象的定义和使用"><a href="#类与对象的定义和使用" class="headerlink" title="类与对象的定义和使用"></a>类与对象的定义和使用</h1><p>在 Java 中类是一个独立的结构体，所以需要使用 class 来进行定义，而在类之中主要由属性和方法组成，属性就是一个个具体的变量，而方法就是可以重复执行的代码</p>
+<p>eg. 定义一个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是&quot;</span> + name + <span class="string">&quot;，我今年&quot;</span> + age + <span class="string">&quot;岁了！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在已经定义了一个类了，其中包含两个属性和一个方法，如果要使用这个类，必须通过对象来完成，而如果要产生对象，就必须使用如下代码格式：（对象必须经过实例化之后才能使用）</p>
+<ul>
+<li>声明并实例化对象：类名称 对象名称 = new 类名称();</li>
+<li>分步完成：<ul>
+<li>声明对象：类名称 对象名称 = null;</li>
+<li>实例化对象：对象名称 = new 类名称();</li>
+</ul>
+</li>
+</ul>
+<p>当获取了实例化对象之后，那么就需要通过对象进行类中的操作调用，有两种调用方式：</p>
+<ul>
+<li>调用类中的属性：实例化对象.成员属性;</li>
+<li>调用类中的方法：实例化对象.方法名称();</li>
+</ul>
+<p>eg. 使用对象操作类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">talk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;I am &quot;</span> + name + <span class="string">&quot;, I&#x27;m &quot;</span> + age + <span class="string">&quot; years old&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person per = <span class="keyword">new</span> Person(); <span class="comment">// 声明并实例化对象</span></span><br><span class="line">        per.name = <span class="string">&quot;Kiring&quot;</span>;</span><br><span class="line">        per.age = <span class="number">20</span>;</span><br><span class="line">        per.talk();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果此时的程序没有进行对象属性内容的设置，则该数据内容为其数据类型对应的默认值</p>
+<h1 id="对象内存分析"><a href="#对象内存分析" class="headerlink" title="对象内存分析"></a>对象内存分析</h1><p>Java 之中类属于引用数据类型，引用数据类型最大的困难在于要进行内存的管理，同时进行操作的时候也会发生内存关系的变化，所以要掌握程序内存关系的简单分析</p>
+<p>如果要进行内存分析，首先先给出两块最为常用的内存空间：</p>
+<ul>
+<li>堆内存：保存的是对象的具体信息，在程序之中，堆内存空间的开辟是通过 new 完成的</li>
+<li>栈内存：保存的是一块堆内存的地址，即：通过地址找到堆内存，进而找到对象内容，但是有时候为了简化分析，可以简单的理解为：对象名称保存在栈内存之中</li>
+</ul>
+<h1 id="对象引用分析"><a href="#对象引用分析" class="headerlink" title="对象引用分析"></a>对象引用分析</h1><p>类本身属于引用数据类型，会涉及到内存的引用传递，引用传递的本质就是：同一块堆内存空间可以被不同的栈内存所指向，也可以更换指向</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person per1 = <span class="keyword">new</span> Person(); <span class="comment">// 声明并实例化对象</span></span><br><span class="line">        per1.name = <span class="string">&quot;Kiring&quot;</span>;</span><br><span class="line">        per1.age = <span class="number">20</span>;</span><br><span class="line">        Person per2 = per1; <span class="comment">// 引用传递</span></span><br><span class="line">        per2.age = <span class="number">30</span>;</span><br><span class="line">        per1.talk();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个时候的引用传递是直接在主方法之中定义的，也可以通过方法实现引用传递，这个时候一定要观察方法的参数类型，同时也要观察方法的执行过程，如下：程序是将 Person 类的实例化对象（内存地址-数值）传递到了 change() 方法之中，由于传递的是一个 Person 类型，那么 change() 方法接收的也是 Person 类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person per = <span class="keyword">new</span> Person(); <span class="comment">// 声明并实例化对象</span></span><br><span class="line">        per.name = <span class="string">&quot;Kiring&quot;</span>;</span><br><span class="line">        per.age = <span class="number">20</span>;</span><br><span class="line">        change(per); <span class="comment">// Person temp per</span></span><br><span class="line">        per.talk();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(Person temp)</span> </span>&#123;</span><br><span class="line">        temp.age = <span class="number">80</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="引用与垃圾产生分析"><a href="#引用与垃圾产生分析" class="headerlink" title="引用与垃圾产生分析"></a>引用与垃圾产生分析</h1><p>引用传递如果处理不当，会造成垃圾的产生，所谓的垃圾空间就是没有任何栈内存所指向的堆内存空间，所有的垃圾将被 GC（Garbage Collector）不定期进行回收并且释放无用内存空间，但是如果垃圾过多，一定会影响 GC 的处理性能，从而降低整体的程序性能，所以在实际的开发之中，对于垃圾的产生应该越少越好</p>
+<p>一个栈内存只能保存一个堆内存的地址数据，如果发生更改，则之前的地址数据将从此栈内存中彻底消失</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/03/24/20Mar24A/" data-id="ckfm6p8t2001r0ots1mqvfq1e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/24/20Mar24B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          记·博客搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/23/20Mar23A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java 方法的定义及使用【Java 学习笔记 08】</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/">互联网生活优化指南</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BA%AA%E8%A6%81/">博客纪要</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebDAV/" rel="tag">WebDAV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" rel="tag">坚果云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">编码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 12.5px;">Blog</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/WebDAV/" style="font-size: 10px;">WebDAV</a> <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" style="font-size: 10px;">坚果云</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 10px;">数据处理</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" style="font-size: 12.5px;">算法分析</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 15px;">计算机图形学</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/23/20May23A/">Excel 公式应用与数据处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/20Apr29A/">减治法与排序</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/28/20Apr28A/">算法分析——蛮力法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/16/20Apr16A/">反走样算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/15/20Apr15A/">区域填充算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 waringhu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

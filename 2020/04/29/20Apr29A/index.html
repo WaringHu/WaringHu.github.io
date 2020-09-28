@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>减治法与排序 | WARINGHU&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="利用了一个问题给定的实例的解和同样问题较小实例的解之间的关系求解{{{(&gt;_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="减治法与排序">
+<meta property="og:url" content="http://example.com/2020/04/29/20Apr29A/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="利用了一个问题给定的实例的解和同样问题较小实例的解之间的关系求解{{{(&gt;_">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/00.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/01.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/02.png">
+<meta property="article:published_time" content="2020-04-29T03:08:08.000Z">
+<meta property="article:modified_time" content="2020-09-28T06:42:25.348Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="算法分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/00.png">
+  
+    <link rel="alternate" href="/atom.xml" title="WARINGHU&#39;S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WARINGHU&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20Apr29A" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/29/20Apr29A/" class="article-date">
+  <time datetime="2020-04-29T03:08:08.000Z" itemprop="datePublished">2020-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      减治法与排序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>减治法利用了一个问题给定的实例的解和同样问题较小实例的解之间的关系，从较小实例出发，利用迭代，或者从较大的实例出发，利用递归，从而求解</p>
+</blockquote>
+<ul>
+<li>减常量形式</li>
+<li>减常因子形式</li>
+<li>减可变因子形式</li>
+</ul>
+<a id="more"></a>
+
+<p>减一技术：问题的较小实例与较大实例的规模相差一个常数，通常这个常数为：1</p>
+<h1 id="减常量形式"><a href="#减常量形式" class="headerlink" title="减常量形式"></a>减常量形式</h1><h2 id="eg-插入排序"><a href="#eg-插入排序" class="headerlink" title="eg. 插入排序"></a>eg. 插入排序</h2><p>对一个包含 N 个元素的数组进行排序</p>
+<p>假设这个数组的较小规模包含 N-1 个元素的子数组已经按照从小到大的顺序进行排序，则此时求解即求解如何将第 N 个元素也加入数组，使得这 N 个元素是有序的？</p>
+<p>即：将第 N 个元素插入已经有序的数组中，使得最终的数组有序</p>
+<p>可以从右到左扫描已经有序的子数组：</p>
+<ul>
+<li><p>如果扫描到的元素比第 N 个元素大，那么插入的位置至少应该在扫描元素之前，那么就让扫描元素向右覆盖，将第 N 个元素插入当前扫描位置，然后继续扫描</p>
+</li>
+<li><p>如果扫描到的元素比第 N 个元素小，那么就应该结束扫描，将第 N 个元素插入当前扫描位置之后一个的位置</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">InsertSort(A[0, ..., n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 用插入排序对给定数组排序</span><br><span class="line">&#x2F;&#x2F; 输入：一个可排序的数组 A</span><br><span class="line">&#x2F;&#x2F; 输出：非降序排列数组 A</span><br><span class="line"></span><br><span class="line">for i⬅1 to n-1 do &#123;</span><br><span class="line">    v ⬅ A[i];</span><br><span class="line">    j ⬅ i-1;</span><br><span class="line">    while(j&gt;&#x3D;0 and A[j]&gt;v) &#123;</span><br><span class="line">        A[j+1] ⬅ A[j];</span><br><span class="line">        j ⬅ i-1;</span><br><span class="line">    &#125;</span><br><span class="line">    A[j+1] ⬅ v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度分析：</p>
+<ul>
+<li>基本操作：子数组扫描</li>
+</ul>
+<p>最坏情况：数组是从大到小排序的</p>
+<p>$$C_{worst}(n) = \sum_{i=1}^{n-1} \sum_{j=0}^{i-1} = \sum_{i=1}^{n-1}i = \frac{(n-1)n}{2} \in \Theta (n^2)$$</p>
+<p>最好情况：数组是从小到大排序的</p>
+<p>$$C_{best}(n) = \sum_{i=1}^{n-1}1 = n-1 \in \Theta (n)$$</p>
+<p>随机排序的数组</p>
+<p>$$C_{avg}(n) \approx \frac{n^2}{4} \in \Theta (n^2)$$</p>
+<p>平均比较次数是最坏情况的一半：$\frac{n^2}{4 }$</p>
+<h2 id="eg-生成组合对象"><a href="#eg-生成组合对象" class="headerlink" title="eg. 生成组合对象"></a>eg. 生成组合对象</h2><p>旅行商问题：需要生成包含所有城市的所有排列</p>
+<p>eg. 集合 (1, 2, 3) 的排列有 6 个，分别为：123，132，213，231，312，321</p>
+<p>用减一法的思路来解决对 n 个元素生成排列的问题：</p>
+<p>假设生成较小规模的集合 {1, …, n-1} 的全部 (n-1)! 个排列的问题已经解决，我们只需要把 n 插入到每个排列的 n 个可能的位置中去，问题就可以解决，由于每个排列插入 n 之后，是 n 个不同的排列，原始问题的排列数则为：n(n-1)!，即：n!</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/00.png" alt="00.png"></p>
+<p><strong>满足最小变化要求：</strong> 假设插入第一个排列时从右到左，插入下一个排列时从左到右，得到的排列中相邻两个只有两个元素是不同的，这样交换相邻排列中的两个元素就可以得到一个新的排列</p>
+<p>缺点：</p>
+<p>需要保存 n-1 规模子集的全部排列，才能产生出 n 规模自己的排列，比较浪费存储空间</p>
+<p>改进：</p>
+<p>Johnson-Trotter 算法：从原始排列开始，通过交换排列中某两个相邻的元素来产生一个新的排列，如此生成全部排列</p>
+<p>规定排列中每个元素都有一个方向，我们在元素上画一个箭头，箭头指向元素移动的方向，如果箭头指向一个相邻的较小的元素，则称该元素是可移动的，如果一个元素在排列的左端，箭头方向也向左，或者一个元素在排列的右端，箭头方向也向右，则称该元素是不可移动的</p>
+<p>步骤：</p>
+<ol>
+<li>初始化排列为：1, 2, 3, …, n，每个元素的方向向左；</li>
+<li>如果排列中存在可移动元素，执行步骤 3，否则退出；</li>
+<li>在排列中找出最大的可移动元素；</li>
+<li>将该元素与其所指向的元素进行交换；</li>
+<li>调换所有大于该元素的元素的方向；</li>
+<li>输出交换元素之后的排列，返回步骤 2。</li>
+</ol>
+<p>由于该算法的运行时间与排列数量成正比，所以其时间复杂度为：n!</p>
+<p>缺点：生成的排列次序不是字典序</p>
+<p>改进：算法 LexicographicPermute</p>
+<p>以字典许生成排列的步骤：</p>
+<ol>
+<li>初始化排列为：1, 2, 3, …, n；</li>
+<li>如果排列中有两个连续升序的元素，则执行步骤 3，否则退出；</li>
+<li>找出所有两个升序元素对 $a_{i}&lt;a_{i+1}$ 中索引最大的为 i，则 $a_{i+1}, …, a_{n}$ 称为最长递减后缀；</li>
+<li>找到最长递减后缀中大于 $a_{i}$ 的最小元素，即：找到使得 $a_{i}&lt;a_{j}$ 的最大索引 j；</li>
+<li>交换 $a_{i}$ 和 $a_{j}$；</li>
+<li>将新后缀 $a_{i+1}, …, a_{n}$ 颠倒，变为递增的；</li>
+<li>输出最后的排列，返回步骤 2。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/01.png" alt="01.png"></p>
+<h1 id="减常因子形式"><a href="#减常因子形式" class="headerlink" title="减常因子形式"></a>减常因子形式</h1><p>与减常量形式不不同，减常因子减去的是某一个固定比例的实例，比如：原实例的一半</p>
+<h2 id="eg-折半查找"><a href="#eg-折半查找" class="headerlink" title="eg. 折半查找"></a>eg. 折半查找</h2><p>将数组分成两半，比较待查找的键 K 和数组最中间的元素的大小关系，如果 K 大于 A[0], …, A[m], …, A[n-1]，则在后一半数组中继续查找，否则在前一半数组中继续查找，查找方式相同，知道找到元素或者数组无法分半为止</p>
+<p>步骤：</p>
+<ol>
+<li>比较数组中间元素即下标为 m 的元素和键值 K 的大小关系，确定下一次查找的子数组的左右边界；</li>
+<li>在新的子数组中查找，直到找到元素或者子数组长度为空。</li>
+</ol>
+<p>时间复杂度分析：</p>
+<p>因为每次比较数组长度都需要减少一半，设数组长度为 $2^k$，那么最坏的情况需要 k+1 次，就可以将数组长度折半到 1，此时比较次数为：$\log_{n+1}$，复杂度渐进函数为：$\log_{n}$</p>
+<h2 id="eg-约瑟夫斯问题"><a href="#eg-约瑟夫斯问题" class="headerlink" title="eg. 约瑟夫斯问题"></a>eg. 约瑟夫斯问题</h2><p>将 n 个人从 1 编号到 n 并围成一圈，从 1 开始依次去掉第二个人，知道只剩一个人，求留下的人的编号是多少？</p>
+<p>用 J(n, 2) 表示 n 个人，去掉每两个人中的后一个，最后剩下的人的编号</p>
+<p>假设 n=6，那么第一圈去掉的编号是 2, 4, 6，第二圈去掉的编号是 1, 3，最后剩下的编号是 5，即：J(6， 2)=5</p>
+<p>又假设 n=7，则 J(7, 2)=7</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr29A/02.png" alt="02.png"></p>
+<p>当 n 为偶数：J(2k) = 2J(k)-1</p>
+<p>当 n 为奇数：J(2k+1) = 2J(k)+1</p>
+<p>简便求解：将 n 转换为二进制数，然后将二进制数循环左移 1 位，新的二进制数转换为十进制数，这个十进制数就是问题的解</p>
+<p>eg. J(6) = J(1102) = 1021 = 5</p>
+<h1 id="减可变因子形式"><a href="#减可变因子形式" class="headerlink" title="减可变因子形式"></a>减可变因子形式</h1><blockquote>
+<p>即：减可变规模算法，减去的实例规模是不固定的</p>
+</blockquote>
+<h2 id="eg-快速选择算法"><a href="#eg-快速选择算法" class="headerlink" title="eg. 快速选择算法"></a>eg. 快速选择算法</h2><p>求 n 个数列表的第 k 个最小元素</p>
+<p>思路：</p>
+<p>如果针对数列的第一个元素，可以将数列分成：</p>
+<ol>
+<li>包含了数列中小于第一个元素的若干元素</li>
+<li>数列中的第一个元素</li>
+<li>大于第一个元素的若干元素</li>
+</ol>
+<p>经过划分就可以得知第一个元素是数列中第几小的元素，假设第一个元素 S，根据 k 和 S 的大小关系，可以选择继续在大于或者小于 S 的子数列中继续划分子数列，直到 S=k</p>
+<p>通过划分就可以将问题的实例不断减小，且减小的规模不是固定的一个数值或者比例，而是可变化的，由于划分快速将实例规模变小了，并且选择了小规模实例继续进行划分，即：快速选择算法</p>
+<p>效率分析：</p>
+<p>最好情况：一次划分就找到指定元素，$T(n) = n-1 \in \Theta (n)$</p>
+<p>最坏情况：经过 n-1 次划分才找到指定元素，$T(n) = (n-1) + (n-2) + … + 1 = \frac{(n-1)n}{2} \in \Theta (n^2)$</p>
+<p>平均情况：$T(n) =   T(\frac{n}{2}) + (n+1) \in \Theta(n)$</p>
+<p>对于选择问题，可以直接用排序方法求得一个有序数组，然后输出指定位置的元素，排序方法中有的算法效率比 $n^2$ 低，似乎基于排序的方法比快速选择算法更优，但是：<strong>快速选择算法在平均情况下的效率是线性的，优于基于排序的方法</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/04/29/20Apr29A/" data-id="ckfm6p8s9000n0otsfv3hhq5f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/23/20May23A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Excel 公式应用与数据处理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/28/20Apr28A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">算法分析——蛮力法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Java 学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/">互联网生活优化指南</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BA%AA%E8%A6%81/">博客纪要</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/" rel="tag">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebDAV/" rel="tag">WebDAV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" rel="tag">坚果云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag">数据处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag">算法分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" rel="tag">编码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag">计算机图形学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 12.5px;">Blog</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Java/" style="font-size: 17.5px;">Java</a> <a href="/tags/WebDAV/" style="font-size: 10px;">WebDAV</a> <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" style="font-size: 10px;">坚果云</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 10px;">数据处理</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" style="font-size: 12.5px;">算法分析</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 15px;">计算机图形学</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/23/20May23A/">Excel 公式应用与数据处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/20Apr29A/">减治法与排序</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/28/20Apr28A/">算法分析——蛮力法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/16/20Apr16A/">反走样算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/15/20Apr15A/">区域填充算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 waringhu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

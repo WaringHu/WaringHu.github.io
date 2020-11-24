@@ -1,349 +1,1138 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WARINGHU'S BLOG</title><meta name="author" content="waringhu"><meta name="copyright" content="waringhu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/inullbyte-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/inullbyte-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/inullbyte-16x16.png">
+  <link rel="mask-icon" href="/images/inullbyte.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="停留是刹那，转身即天涯">
+<meta property="og:type" content="website">
 <meta property="og:title" content="WARINGHU&#39;S BLOG">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://waringhu.com/index.html">
 <meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="停留是刹那，转身即天涯">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/avatar.jpg">
 <meta property="article:author" content="waringhu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
-};
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="https://waringhu.com/">
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2020-11-20 12:55:58'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>WARINGHU'S BLOG</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
   }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
   }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WARINGHU'S BLOG</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="waringhu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">waringhu</p>
+  <div class="site-description" itemprop="description">停留是刹那，转身即天涯</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/waringhu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;waringhu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:waringhu@163.com" title="E-Mail → mailto:waringhu@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Nov18A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Nov18A/" class="post-title-link" itemprop="url">【必需】页面标题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-11-18 20:43:00 / 修改时间：20:48:52" itemprop="dateCreated datePublished" datetime="2020-11-18T20:43:00+08:00">2020-11-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 【必需】页面标题</span><br><span class="line">date: 【必需】页面创建日期</span><br><span class="line">updated: 【可选】页面更新日期</span><br><span class="line">type: 【必需】标籤、分类和友情链接三个页面需要配置</span><br><span class="line">comments: 【可选】显示页面评论模块(默认 true)</span><br><span class="line">description: 【可选】页面描述</span><br><span class="line">keywords: 【可选】页面关键字</span><br><span class="line">top_img: 【可选】页面顶部图片</span><br><span class="line">mathjax: 【可选】显示mathjax(当设置mathjax的per_page: false时，才需要配置，默认 false)</span><br><span class="line">katex: 【可选】显示katex(当设置katex的per_page: false时，才需要配置，默认 false)</span><br><span class="line">aside: 【可选】显示侧边栏 (默认 true)</span><br><span class="line">aplayer: 【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置</span><br><span class="line">highlight_shrink: 【可选】配置代码框是否展开(true&#x2F;false)(默认为设置中highlight_shrink的配置)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Sep30A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Sep30A/" class="post-title-link" itemprop="url">3.条件判断</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-09-30 11:39:58 / 修改时间：11:41:58" itemprop="dateCreated datePublished" datetime="2020-09-30T11:39:58+08:00">2020-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python 自学笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>条件判断就是明确计算机在什么条件下执行什么命令。</p>
+<h1 id="if…"><a href="#if…" class="headerlink" title="if…"></a>if…</h1><p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flag = int(input(<span class="string">&#x27;1 + 1 等于几？&#x27;</span>))</span><br><span class="line"><span class="keyword">if</span> flag == <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">&#x27;你可真是个机灵鬼！&#x27;</span>)</span><br><span class="line"><span class="comment"># 注意这里缩进了 4 个空格</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：这里的 <code>==</code> 与 <code>=</code> （赋值）是有区别的，<code>==</code> 表示等于。</p>
+<p>以上代码，当输入 2 时，程序输出：你可真是个机灵鬼！当输入不等于 2 时，程序什么也不会执行，因为不满足进一步的条件。</p>
+<p>if 后面跟着一个条件，当条件为真，程序执行 if 内部的指令，否则程序跳出 if，执行 if 外部的指令。</p>
+<p><strong>注意</strong>：if 的条件后面有一个英文冒号【<code>:</code>】，if 内部的语句都要缩进 4 个空格。</p>
+<h1 id="if…else…"><a href="#if…else…" class="headerlink" title="if…else…"></a>if…else…</h1><p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flag = int(input(<span class="string">&#x27;1 + 1 等于几？&#x27;</span>))</span><br><span class="line"><span class="keyword">if</span> flag == <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">&#x27;你可真是个机灵鬼！&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&#x27;emmm!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>以上多了一个 <code>else</code>，表示否则，也就是说当 if 后的条件为假时，程序执行 else 后的指令。</p>
+<p><strong>注意</strong>：if 后面有一个英文冒号【<code>:</code>】，<em>else 后面也有</em>，if 内部的语句都要缩进 4 个空格，<em>else 内部的语句也要缩进 4 个空格</em>。</p>
+<h1 id="if…elif…else…0"><a href="#if…elif…else…0" class="headerlink" title="if…elif…else…0"></a>if…elif…else…0</h1><p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flag = int(input(<span class="string">&#x27;1 + 1 等于几？&#x27;</span>))</span><br><span class="line"><span class="keyword">if</span> flag == <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">&#x27;你可真是个机灵鬼！&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> flag &lt; <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">&#x27;太小了！&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">&#x27;太大了！&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里有一个 <code>elif</code>，其实就是 else if 的缩写，表示否则如果。</p>
+<p>而且这个 elif 是可以根据实际情况重复使用的：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ...:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elif</span> ...:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elif</span> ...:</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<p>程序执行的原理以及注意事项与之前的完全一样。</p>
+<p>条件判断就是一种控制流，控制流下的语句会依照一些特定的规则，控制程序走向。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Sep28C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Sep28C/" class="post-title-link" itemprop="url">2.数据类型</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-28 19:00:23" itemprop="dateCreated datePublished" datetime="2020-09-28T19:00:23+08:00">2020-09-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-30 11:41:02" itemprop="dateModified" datetime="2020-09-30T11:41:02+08:00">2020-09-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python 自学笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>如题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Sep28C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Sep28B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Sep28B/" class="post-title-link" itemprop="url">1.input()函数与变量</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-28 18:56:46" itemprop="dateCreated datePublished" datetime="2020-09-28T18:56:46+08:00">2020-09-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-30 11:40:55" itemprop="dateModified" datetime="2020-09-30T11:40:55+08:00">2020-09-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python 自学笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>学习整数和字符串这两种数据类型、<code>input()</code> 函数和注释的使用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Sep28B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Sep28A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Sep28A/" class="post-title-link" itemprop="url">0.print()函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-28 18:42:01" itemprop="dateCreated datePublished" datetime="2020-09-28T18:42:01+08:00">2020-09-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-30 11:40:43" itemprop="dateModified" datetime="2020-09-30T11:40:43+08:00">2020-09-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python 自学笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Python 基础语法系列开“🕳”。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Sep28A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20May23A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20May23A/" class="post-title-link" itemprop="url">Excel 公式应用与数据处理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-23 19:31:23" itemprop="dateCreated datePublished" datetime="2020-05-23T19:31:23+08:00">2020-05-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:03" itemprop="dateModified" datetime="2020-11-18T20:21:03+08:00">2020-11-18</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>仅记录部分知识点</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20May23A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Apr29A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Apr29A/" class="post-title-link" itemprop="url">减治法与排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-29 11:08:08" itemprop="dateCreated datePublished" datetime="2020-04-29T11:08:08+08:00">2020-04-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:35" itemprop="dateModified" datetime="2020-11-18T20:21:35+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">算法分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>利用了一个问题给定的实例的解和同样问题较小实例的解之间的关系求解{{{(>_<)}}}</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Apr29A/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Apr28A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Apr28A/" class="post-title-link" itemprop="url">算法分析——蛮力法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-28 14:26:04" itemprop="dateCreated datePublished" datetime="2020-04-28T14:26:04+08:00">2020-04-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:38" itemprop="dateModified" datetime="2020-11-18T20:21:38+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">算法分析</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最直接最根本的算法</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Apr28A/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Apr16A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Apr16A/" class="post-title-link" itemprop="url">反走样算法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-16 11:50:14" itemprop="dateCreated datePublished" datetime="2020-04-16T11:50:14+08:00">2020-04-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:41" itemprop="dateModified" datetime="2020-11-18T20:21:41+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机图形学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>光栅图形学算法——反走样算法</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Apr16A/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Apr15A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/20Apr15A/" class="post-title-link" itemprop="url">区域填充算法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-15 16:35:07" itemprop="dateCreated datePublished" datetime="2020-04-15T16:35:07+08:00">2020-04-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:43" itemprop="dateModified" datetime="2020-11-18T20:21:43+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机图形学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>光栅图形学算法——区域填充算法</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/20Apr15A/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
       }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
-        }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WARINGHU'S BLOG</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">WARINGHU'S BLOG</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:waringhu@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/20Nov18A/" title="【必需】页面标题">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【必需】页面标题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/20Nov18A/" title="【必需】页面标题">【必需】页面标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-18T12:43:00.652Z" title="发表于 2020-11-18 20:43:00">2020-11-18</time></span></div><div class="content">Welcome!
-123456789101112131415---title: 【必需】页面标题date: 【必需】页面创建日期updated: 【可选】页面更新日期type: 【必需】标籤、分类和友情链接三个页面需要配置comments: 【可选】显示页面评论模块(默认 true)description: 【可选】页面描述keywords: 【可选】页面关键字top_img: 【可选】页面顶部图片mathjax: 【可选】显示mathjax(当设置mathjax的per_page: false时，才需要配置，默认 false)katex: 【可选】显示katex(当设置katex的per_page: false时，才需要配置，默认 false)aside: 【可选】显示侧边栏 (默认 true)aplayer: 【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置highlight_shrink: 【可选】配置代码框是否展开(true&#x2F;false)(默认为设置中highlight_shrink的配置)---</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/30/20Sep30A/" title="3.条件判断">3.条件判断</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-30T03:39:58.000Z" title="发表于 2020-09-30 11:39:58">2020-09-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">Python 自学笔记</a></span></div><div class="content">条件判断就是明确计算机在什么条件下执行什么命令。
-if…eg.
-1234flag = int(input(&#x27;1 + 1 等于几？&#x27;))if flag == 2:    print(&#x27;你可真是个机灵鬼！&#x27;)# 注意这里缩进了 4 个空格
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
 
-注意：这里的 == 与 = （赋值）是有区别的，== 表示等于。
-以上代码，当输入 2 时，程序输出：你可真是个机灵鬼！当输入不等于 2 时，程序什么也不会执行，因为不满足进一步的条件。
-if 后面跟着一个条件，当条件为真，程序执行 if 内部的指令，否则程序跳出 if，执行 if 外部的指令。
-注意：if 的条件后面有一个英文冒号【:】，if 内部的语句都要缩进 4 个空格。
-if…else…eg.
-12345flag = int(input(&#x27;1 + 1 等于几？&#x27;))if flag == 2:    print(&#x27;你可真是个机灵鬼！&#x27;)else:    print(&#x27;emmm!&#x27;)
+  <footer class="footer">
+    <div class="footer-inner">
 
-以上多了一个 else，表示否则，也就是说当 if 后的条件为假 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/28/20Sep28C/" title="2.数据类型">2.数据类型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T11:00:23.000Z" title="发表于 2020-09-28 19:00:23">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">Python 自学笔记</a></span></div><div class="content">如题。
 
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">waringhu</span>
+</div>
 
-计算机是做数学运算的机器，它不仅可以处理各种数值，还可以处理文本、音频、视频、图形图像等数据。
-字符串
-string，计算机中一般简写：str
+    </div>
+  </footer>
 
-字符串的呈现方式一般是用单引号或者双引号括起来的文本，eg. &#39;中国&#39;、&quot;cHINA&quot; etc.
-使用单引号或者是双引号都是一样的效果，而且单引号和双引号只是一种表达方式，它不属于字符串的一部分。
-💢如果字符串内部包含了单引号【&#39;&#39;】或者双引号【&quot;&quot;】的话，就需要转义字符【\】来标识。
-eg.
-12# 注意：这是错误的print(&#x27;Let&#x27;s go! go! go!&#x27;)
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-输出：
+  
 
- SyntaxError: invalid syntax 
 
-以上，Python 会报错说“语法错误”，因为 Python 会从左到右匹配引号，所以在这个语句中，Let 被识别成了字符串，那么后面的 s go! go! go!&#39; 计算机就理解不了了，于是产生了错误。
-当我们使用转义字符后：
-eg.
-12# 转义字符【\】可以改变连接在其后的字 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/28/20Sep28B/" title="1.input()函数与变量">1.input()函数与变量</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T10:56:46.000Z" title="发表于 2020-09-28 18:56:46">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">Python 自学笔记</a></span></div><div class="content">学习整数和字符串这两种数据类型、input() 函数和注释的使用。
 
 
-整数和字符串eg.
-123print(1 + 1)print(&#x27;see what see!&#x27;)print(&#x27;就看你咋了？&#x27;)
 
-这里的 1 就是整数，而 &#39;see what see!&#39; 和 &#39;就看你咋了？&#39; 都是字符串，用单引号括起来的文本就是字符串。
-变量变量就是一个带标签的盒子，里面用来存放数据。
-eg.
-1num = 3
 
-这里的 num 就是变量名，而 3 就是变量值，这行代码意思就是把 3 这个整数存放进变量 num 里（称之为赋值），变量名是可以自己设定的（但是必须遵守一定的命名规则！）。
-注意：赋值的 = 和等于的 = 完全不一样，赋值是把等号右边的值赋给等号左边的变量，而等于就是等于。
-赋值 like this: num ⬅ 3
-eg.
-12num = 3print(num)
 
-输出：
+  
 
-3
 
-以上！我们定义了一个变量 num，把整数 3 赋值给 num，然后打印 num，由此可见：
 
-计算机运行程序时是一行一行的执行代码语句的 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/28/20Sep28A/" title="0.print()函数">0.print()函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T10:42:01.000Z" title="发表于 2020-09-28 18:42:01">2020-09-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">Python 自学笔记</a></span></div><div class="content">Python 基础语法系列开“🕳”。
 
 
-print()Python 的语言逻辑已经高度接近人类语言。
-Python 程序的执行过程大致如下：
-eg. 
-1print(&#x27;see what see!&#x27;)
 
-
-我们使用 Python 向计算机发出指令；
-Python 解释器将代码编译成计算机能够理解的机器语言；
-计算机执行相应指令；
-输出指令执行后的结果。
-
-注意 print(1 + 1) 与 print(&#39;see what see!&#39;) 的区别：
-计算机可以很容易地读懂数学运算，因为数学运算是非常标准的，所以可以直接输入运算式子；但是对于文本信息，计算机不能对其进行运算，所以需要一个引号告诉计算机：不用运算，直接输出。
-三引号在 print() 中使用三引号可以让文本换行打印。
-eg.
-123456print(&#x27;&#x27;&#x27;从明天起，做一个幸福的人喂马，劈柴，周游世界从明天起，关心粮食和蔬菜我有一所房子，面朝大海，春暖花开&#x27;&#x27;&#x27;)
-
-输出：
-
-从明天起，做一个幸福的人喂马，劈柴，周游世界从明天起，关 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/23/20May23A/" title="Excel 公式应用与数据处理">Excel 公式应用与数据处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-23T11:31:23.000Z" title="发表于 2020-05-23 19:31:23">2020-05-23</time></span></div><div class="content">
-仅记录部分知识点
-
-
-
-
-
-
-符号
-作用
-eg.
-
-
-
-%
-将数值转换成百分比格式
-(15+25)% = 40%
-
-
-&lt;&gt;
-比较两个数值是否不相等
-A1&lt;&gt;B2
-
-
-:(冒号)
-引用两个单元格地址间所有的单元格
-A1:B5
-
-
-,(逗号)
-引用多个不连续的单元格或区域
-A1,B2:B4
-
-
-(空格)
-引用两个区域间的共有单元格区域
-SUM(A1:B4 B2:D6)
-
-
-文本运算符 &amp; 是用于连接文本的符号，可以将两个文本字符串进行连接
-使用 () 可以避免运算符优先级混乱
-绝对引用时，在单元格地址行号和列标前都加上绝对引用符号 $，eg. $C$3，表示单元格 C3 是绝对引用
-在不同工作表公式格式的引用：工作表名称! 列标行号，eg. 在 Sheet1 工作表中 D4=Sheet2! B4+Sheet3! C4
-在不同工作簿公式格式的引用：[工作簿名称]工作表名称! 列标行号，eg. 在 book1 工作簿中 D4=[book2]Sheet2! B4+[book3]Sheet3! C4
-在不同磁盘的不同工作簿公式格式的引用：&#39;磁盘路径[工作簿 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/29/20Apr29A/" title="减治法与排序">减治法与排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-29T03:08:08.000Z" title="发表于 2020-04-29 11:08:08">2020-04-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></span></div><div class="content">
-减治法利用了一个问题给定的实例的解和同样问题较小实例的解之间的关系，从较小实例出发，利用迭代，或者从较大的实例出发，利用递归，从而求解
-
-
-减常量形式
-减常因子形式
-减可变因子形式
-
-
-
-减一技术：问题的较小实例与较大实例的规模相差一个常数，通常这个常数为：1
-减常量形式eg. 插入排序对一个包含 N 个元素的数组进行排序
-假设这个数组的较小规模包含 N-1 个元素的子数组已经按照从小到大的顺序进行排序，则此时求解即求解如何将第 N 个元素也加入数组，使得这 N 个元素是有序的？
-即：将第 N 个元素插入已经有序的数组中，使得最终的数组有序
-可以从右到左扫描已经有序的子数组：
-
-如果扫描到的元素比第 N 个元素大，那么插入的位置至少应该在扫描元素之前，那么就让扫描元素向右覆盖，将第 N 个元素插入当前扫描位置，然后继续扫描
-
-如果扫描到的元素比第 N 个元素小，那么就应该结束扫描，将第 N 个元素插入当前扫描位置之后一个的位置
-
-
-123456789101112131415InsertSort(A[0, ..., n-1])&#x2F;&#x2F; 用插入排序对给定数组排序&#x2F ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/28/20Apr28A/" title="算法分析——蛮力法">算法分析——蛮力法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-28T06:26:04.000Z" title="发表于 2020-04-28 14:26:04">2020-04-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a></span></div><div class="content">没简介多简洁😴
-
-
-概述
-定义：从问题的描述和定义中直接得出解的方法
-
-eg. 冒泡排序
-12345678910BubbleSort(A[0, ..., n-1])&#x2F;&#x2F; 该算法用冒泡排序对给定数组排序&#x2F;&#x2F; 输入：一个可排序的数组 A[0, ..., n-1]&#x2F;&#x2F; 输出：非降序排列的数组 A[0, ..., n-1]for i⬅0 to n-2 do    for j⬅0 to n-2-i do        if A[j+1] &lt; A[j]            swap A[j] and A[j+1]
-
-一般用来解决一些比较广阔的领域问题，并不是针对某一特定领域的问题，也能够用于产生问题的一些合理方法
-通常当问题的实例规模比较小，或者说问题的数据量比较小的时候，蛮力法的代价比较小，可以选择它来解决问题
-蛮力法的结果可以被用作其他高效算法的衡量标准，来比较这些高效算法的效率和正确性
-最近对和凸包问题
-最近对问题：在包含 N 个点的集合中找出距离最近的两个点
-
-蛮力法：
-$$d(P_{i}, P_{j}) = \sqrt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/16/20Apr16A/" title="反走样算法">反走样算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-16T03:50:14.000Z" title="发表于 2020-04-16 11:50:14">2020-04-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></span></div><div class="content">日常不写简介😓
-
-
-
-概述
-对于直线、圆以及椭圆这些最基本元素的生成速度和显示质量的改进，在图形处理系统种具有重要的应用价值
-
-但是它们生成的线条具有明显的“锯齿形”，即：发生走样现象
-
-“锯齿”是走样的一种形式，而走样是光栅显示的一种固有性质，产生走样现象的原因是像素本质上的离散性
-走样是数字化的必然产物
-走样现象：
-
-光栅图形产生的阶梯形（锯齿形）
-图形中包含相对微小的物体的时候，这些物体在静态图形中容易被丢弃或忽略，在动画序列中时隐时现，产生闪烁
-
-如果对一个快速变化的信号采样频率过低，所得到的样本表示的会是低频变化的信号，原始信号的频率看起来被较低的走样频率所代替
-反走样技术用于减少或者消除走样效果的技术叫做反走样技术
-由于图形的走样现象对于图形的显示质量影响很大，几乎所有的图形处理系统都要对基本图形进行反走样处理
-采用分辨率更高的显示设备，对解决走样现象有所帮助，因为可以使锯齿相对物体会更小一些
-
-但是这样的反走样方法是以成倍的存储器代价和扫描转换时间为代价获得的
-为了稳定屏幕上的图像，电子枪至少要以 $\frac{1}{24}$ 秒 1 次的速度轰击屏幕上的所有像素，如果 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/15/20Apr15A/" title="区域填充算法">区域填充算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-15T08:35:07.000Z" title="发表于 2020-04-15 16:35:07">2020-04-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a></span></div><div class="content">没有简介又怎么了😏
-
-
-概述区域： 👉已经表示成点阵形式的填充图形，是像素的集合
-区域填充是指将区域内的一点（通常称为种子点）赋予给定的颜色，然后将这种颜色扩展到整个区域内的过程
-区域可以采用内点表示和边界表示两种形式
-
-内点表示： 枚举出区域内部的所有像素，内部的所有像素填充同一个颜色，边界像素填充与内部像素不同的颜色
-边界表示： 枚举出边界上的所有像素，边界上的所有像素填充同一个颜色，内部像素填充与边界像素不同的颜色
-区域填充算法要求区域是连通的，因为只有在连通的区域中，才可能将种子点的颜色扩展到区域内的其他点
-区域又分为 4 向连通区域和 8 向连通区域
-
-
-4 向连通区域：从区域上一点出发，可以通过四个方向，即：👆、👇、👈、👉移动的组合，在不越出区域的前提下，到达区域内任意像素
-8 向连通区域：同理
-
-简单 4 连通种子填充算法
-又称：区域填充递归算法
-
-假设区域采用边界定义，即：区域边界上所有像素均具有某一特定值，区域内部所有像素均不采用这一特定值，而边界外的像素可以具有与边界相同的值
-使用栈结构来实现简单的种子填充算法
-
-队列：先进先出栈：后进先出
-
-算法原理： ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">waringhu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:waringhu@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">我的微信公众号ID：inullbyte</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/18/20Nov18A/" title="【必需】页面标题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【必需】页面标题"/></a><div class="content"><a class="title" href="/2020/11/18/20Nov18A/" title="【必需】页面标题">【必需】页面标题</a><time datetime="2020-11-18T12:43:00.652Z" title="发表于 2020-11-18 20:43:00">2020-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/30/20Sep30A/" title="3.条件判断">3.条件判断</a><time datetime="2020-09-30T03:39:58.000Z" title="发表于 2020-09-30 11:39:58">2020-09-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/28/20Sep28C/" title="2.数据类型">2.数据类型</a><time datetime="2020-09-28T11:00:23.000Z" title="发表于 2020-09-28 19:00:23">2020-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/28/20Sep28B/" title="1.input()函数与变量">1.input()函数与变量</a><time datetime="2020-09-28T10:56:46.000Z" title="发表于 2020-09-28 18:56:46">2020-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/28/20Sep28A/" title="0.print()函数">0.print()函数</a><time datetime="2020-09-28T10:42:01.000Z" title="发表于 2020-09-28 18:42:01">2020-09-28</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">Java 学习笔记</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">Python 自学笔记</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/"><span class="card-category-list-name">互联网生活优化指南</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BA%AA%E8%A6%81/"><span class="card-category-list-name">博客纪要</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"><span class="card-category-list-name">学习资料</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/"><span class="card-category-list-name">算法分析</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"><span class="card-category-list-name">计算机图形学</span><span class="card-category-list-count">5</span></a></li>
-            
-            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Blog/" style="font-size: 1.18em; color: #999ca1">Blog</a> <a href="/tags/Excel/" style="font-size: 1.1em; color: #999">Excel</a> <a href="/tags/Java/" style="font-size: 1.42em; color: #99a6b7">Java</a> <a href="/tags/Python/" style="font-size: 1.26em; color: #999fa8">Python</a> <a href="/tags/WebDAV/" style="font-size: 1.1em; color: #999">WebDAV</a> <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" style="font-size: 1.1em; color: #999">坚果云</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 1.26em; color: #999fa8">基础语法</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.5em; color: #99a9bf">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">数据处理</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" style="font-size: 1.18em; color: #999ca1">算法分析</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 1.1em; color: #999">编码规范</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 1.34em; color: #99a3b0">计算机图形学</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">11</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-09-25T03:41:07.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">30.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-11-20T04:55:58.177Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By waringhu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="http://waringhu.com/">blog</a>!</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png" alt="ICP"/><span>备案ing</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/inullbyte-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/inullbyte-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/inullbyte-16x16.png">
+  <link rel="mask-icon" href="/images/inullbyte.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="定义：计算机图形学就是研究如何在计算机中表示图形，以及利用计算机进行图形的计算、处理和显示的相关原理与算法  生成图形的三个步骤：  造型技术 光照模型 绘制（渲染）技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机图形学概论">
+<meta property="og:url" content="https://waringhu.com/20Apr07A/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="定义：计算机图形学就是研究如何在计算机中表示图形，以及利用计算机进行图形的计算、处理和显示的相关原理与算法  生成图形的三个步骤：  造型技术 光照模型 绘制（渲染）技术">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-07T05:59:48.000Z">
+<meta property="article:modified_time" content="2020-11-18T12:21:59.865Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://waringhu.com/20Apr07A/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>计算机图形学概论 | WARINGHU'S BLOG</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WARINGHU'S BLOG</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">基础概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E8%BD%AF%E4%BB%B6%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">图形软件：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%98%BE%E7%A4%BA%E8%AE%BE%E5%A4%87%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">图形显示设备：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%A7%E7%BC%93%E5%86%B2%E5%99%A8%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%83%8F%E7%B4%A0"><span class="nav-number">4.</span> <span class="nav-text">帧缓冲器与屏幕像素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E8%BE%A8%E7%8E%87%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">5.</span> <span class="nav-text">分辨率的基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E4%B8%8E%E5%9B%BE%E5%83%8F"><span class="nav-number">6.</span> <span class="nav-text">图形与图像</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="waringhu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">waringhu</p>
+  <div class="site-description" itemprop="description">停留是刹那，转身即天涯</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/waringhu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;waringhu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:waringhu@163.com" title="E-Mail → mailto:waringhu@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Apr07A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机图形学概论
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-04-07 13:59:48" itemprop="dateCreated datePublished" datetime="2020-04-07T13:59:48+08:00">2020-04-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-18 20:21:59" itemprop="dateModified" datetime="2020-11-18T20:21:59+08:00">2020-11-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机图形学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>定义：计算机图形学就是研究如何在计算机中表示图形，以及利用计算机进行图形的计算、处理和显示的相关原理与算法</p>
+</blockquote>
+<p>生成图形的三个步骤：</p>
+<ol>
+<li>造型技术</li>
+<li>光照模型</li>
+<li>绘制（渲染）技术</li>
+</ol>
+<a id="more"></a>
+
+<h1 id="基础概述"><a href="#基础概述" class="headerlink" title="基础概述"></a>基础概述</h1><p>渲染一幅三维图像所涉及的知识，实际上就是计算机图形中每个像素看上去应该是什么颜色的问题，这很大程度上取决于不同的光照模型</p>
+<p>计算机屏幕是由很多像素构成的，像素作为构成图形的基本单位，为了在屏幕上显示一幅图形，就必须研究在哪些像素上生成图形，就必须有一套针对光栅显示器生成图形的算法</p>
+<p>光栅显示器：</p>
+<p>七十年代诞生，现在使用的显示器都是光栅显示器，光栅显示器的屏幕是由像素组成</p>
+<h1 id="图形软件："><a href="#图形软件：" class="headerlink" title="图形软件："></a>图形软件：</h1><ol>
+<li>图形应用数据结构</li>
+</ol>
+<p>实际上是对应一组图形数据文件，其中存放着欲生成的图形对象的全部描述信息</p>
+<ol start="2">
+<li>图形应用软件</li>
+</ol>
+<p>是解决某种应用问题的图形软件，是图形系统中的核心部分，包括了各种图形生成和处理技术，是图形技术在各种不同应用中的抽象</p>
+<p>eg. PhotoShop、3Dmax etc.</p>
+<ol start="3">
+<li>图形支撑软件</li>
+</ol>
+<p>大多数图形应用程序是建立在一定的图形支撑软件上的，图形支撑软件需要具有规范接口</p>
+<p>OpenGL（Open Graphics Library）：一个功能强大，调用方便的底层图形库</p>
+<h1 id="图形显示设备："><a href="#图形显示设备：" class="headerlink" title="图形显示设备："></a>图形显示设备：</h1><ol>
+<li>CRT 显示器</li>
+</ol>
+<p>一种使用阴极射线管的显示器，阴极射线管主要由五部分组成，分别是：电子枪、偏转线圈、荫罩、荧光粉层和玻璃外壳，<strong>是曾经应用最广泛的显示器之一</strong></p>
+<p>CRT 显示器可以显示不同颜色的图形，彩色 CRT 显示器的荧光屏涂有三种荧光物质，分别能发出 红、绿、蓝 三种颜色的光，从而混合出不同颜色</p>
+<ol start="2">
+<li>LCD 显示器</li>
+</ol>
+<p>液晶显示器，工作原理是在显示器内部有很多液晶粒子，它们有规律的排列成一定的形状，并且它们每一面的颜色分别为：红、绿、蓝，当显示器接收到电脑的显示数据时，会控制每个液晶粒子转动到不同颜色的面，从而组合成不同的颜色和图像</p>
+<ol start="3">
+<li>LED 显示器</li>
+</ol>
+<p>发光二极管。是一种能将电能转化为光能的半导体电子元件，早期只能发出低光度的红光，现在能发出的光已经遍及可见光、红外线和紫外线</p>
+<ol start="4">
+<li>等离子显示器</li>
+</ol>
+<p>继 CRT 显示器、LCD 显示器之后的新一代显示器，厚度极薄、分辨率高，其成像原理是在显示屏上排列上千个密封的小低气压气体室，通过电流激发使其发出肉眼不可见的紫外线，然后紫外线碰击后面玻璃上的红、绿、蓝三种颜色的荧光体发出肉眼可见的光，以此成像</p>
+<ol start="5">
+<li>3D 显示器</li>
+</ol>
+<p>传统的 3D 电影在屏幕上有两组图像，观众需要戴上偏光镜以消除重影，形成视差，产生立体感</p>
+<p>利用立体显示技术的“真 3D”，实际上是利用“视差栅栏”，是两只眼睛分别接收不同的图像，来形成立体效果</p>
+<h1 id="帧缓冲器与屏幕像素"><a href="#帧缓冲器与屏幕像素" class="headerlink" title="帧缓冲器与屏幕像素"></a>帧缓冲器与屏幕像素</h1><p>光栅扫描的帧缓冲器对屏幕每一点都有存储 强度/颜色 信息的能力，在计算机屏幕上画一幅图像，需要计算每一个像素的 RGB 值，在帧缓存里写 RGB 相当于在屏幕上画颜色</p>
+<p>帧缓冲器单元个数至少与显示器能显示的像素总数相同，且存储单元一一对应于可寻址的屏幕像素位置</p>
+<p>显示器的分辨率表示的是在屏幕上扫描一行一共有多少个点，一共有多少行扫描线</p>
+<p>帧缓冲器的每一个存储单元的位长决定了一幅画面上能同时显示的不同灰度的数目或颜色的种类</p>
+<p>eg.</p>
+<ul>
+<li>如果是单色，则每个像素只需要 1Bit</li>
+<li>如果是 16 色，则每个像素需要 4Bit（2⁴ = 16）</li>
+<li>如果是 256 色，则每个像素需要 1 字节（8 位，2⁸ = 256）</li>
+<li>如果是 65536（64K）色，则每个像素需要 2 字节（16 位，2¹⁶ = 64K）</li>
+<li>如果是 16777216（16.7M）色，则每个像素需要 3 字节（24 位，2²⁴ = 16.7M，24 位真彩色）</li>
+</ul>
+<p>计算显存的大小与其所支持的最大分辨率和色彩数的对应关系：</p>
+<p>eg. 显卡有 2MB 显存，当分辨率为 1024x768 时，可支持的色彩数？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2MB &#x3D; 2*1024*1024 &#x3D; 2097152 #字节</span><br><span class="line">1024x768 &#x3D; 786432 #像素</span><br></pre></td></tr></table></figure>
+
+<h1 id="分辨率的基础知识"><a href="#分辨率的基础知识" class="headerlink" title="分辨率的基础知识"></a>分辨率的基础知识</h1><p>屏幕分辨率：屏幕上显示的像素个数</p>
+<p>显示分辨率：计算机控制器所能提供的显示模式的分辨率</p>
+<ul>
+<li>对于文本显示方式：显示分辨率用水平和垂直方向上所能显示的字符总数的乘积表示</li>
+<li>对于图形显示方式：显示分辨率用水平和垂直方向上所能显示的像素点总数的乘积表示</li>
+</ul>
+<p>显卡分辨率：表示显卡输出给显示器，并且能在显示器上描绘像素点的数量</p>
+<p>Tips：</p>
+<ul>
+<li>显卡能输出的最大分辨率并不代表自己的电脑就能达到这样高的分辨率，还必须有足够强大的显示器</li>
+<li>一台电脑的最高分辨率由显卡和显示器共同决定，取决于最低的一方</li>
+<li>显示器最高分辨率是可以显示出来的最大分辨率</li>
+<li>显卡最高分辨率是能支持的最大分辨率</li>
+</ul>
+<p>显示器的点距：指相邻像素点之间的距离，两点之间的距离越小越好</p>
+<p>对于 14、15 英寸显示器，0.28mm 的点距已经足够，而对于更大屏幕的显示器则需要更小的点距指标</p>
+<p><strong>显卡的作用与性能：</strong></p>
+<p>基本作用就是显示图文，显卡 + 显示器构成了计算机的显示系统，显卡对于计算机的显示性能起着很重要的作用，现在的显卡还可以替代一部分 CPU 的功能，帮助处理数据</p>
+<h1 id="图形与图像"><a href="#图形与图像" class="headerlink" title="图形与图像"></a>图形与图像</h1><p>区别：</p>
+<ul>
+<li><p>说法一：图形是由计算机绘制的，图像是认为利用外部设备捕捉到的外部的景象</p>
+</li>
+<li><p>说法二：图形是矢量图，图像式位图（点阵图）</p>
+</li>
+</ul>
+<p>位图：又称点阵图或像素图，计算机屏幕上的图由屏幕上像素构成，每个点用二进制数据来描述其颜色与亮度等信息</p>
+<p>矢量图：又称面向对象的图形或绘图图形，是用数学方式描述的曲线及曲线围成的色块制作的图形</p>
+<p>矢量文件中的图形元素称为对象，每个对象都是一个自成一体的实体，它具有颜色、形状、轮廓、大小和屏幕位置等属性</p>
+<p><strong>矢量图与位图的区别：</strong></p>
+<ol>
+<li>存储方式</li>
+</ol>
+<ul>
+<li>点阵文件是存储图的各个像素点的位置信息、颜色信息以及灰度信息</li>
+<li>矢量文件是用数学方程、数学形式对图像进行描述，通常是用图形的形状参数和属性等参数来表示图形</li>
+</ul>
+<p>点阵文件存储空间比矢量文件大</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#相互转换</span><br><span class="line"></span><br><span class="line">矢量文件 ---扫描转换---&gt;&gt;&gt; 点阵文件</span><br><span class="line">矢量文件 &lt;&lt;&lt;---图像处理--- 点阵文件</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>缩放度</li>
+</ol>
+<p>位图与分辨率有关，即在一定面积的图像上包含固定数量的像素</p>
+<p>矢量图与分辨率无关，可以将其缩放到任意大小和以任意分辨率在输出设备上打印出来，都不会影响清晰度</p>
+<ol start="3">
+<li>存储格式</li>
+</ol>
+<p>位图：BMP、TIFF、GIF、JPEG、PNG</p>
+<p>矢量图：DXF、SVG、EPS、WMF、EMF</p>
+<p>位图比矢量图更容易模仿真实感图形效果，但存储空间更大</p>
+<p>在图形缩放时，矢量图不会失真，适用于文字设计、图案设计、版式设计、计算机辅助设计、工艺美术设计、插画 etc.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 计算机图形学</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20Mar27A/" rel="prev" title="搭建我的多端云同步生态">
+                  <i class="fa fa-chevron-left"></i> 搭建我的多端云同步生态
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20Apr07B/" rel="next" title="我是如何提升我的网站访问速度的？">
+                  我是如何提升我的网站访问速度的？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">waringhu</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

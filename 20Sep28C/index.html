@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/inullbyte-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/inullbyte-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/inullbyte-16x16.png">
+  <link rel="mask-icon" href="/images/inullbyte.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="如题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.数据类型">
+<meta property="og:url" content="https://waringhu.com/20Sep28C/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="如题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/waringhu/assets/raw/master/img/image-20200626164658226.png">
+<meta property="og:image" content="https://gitee.com/waringhu/assets/raw/master/img/image-20200626170049456.png">
+<meta property="article:published_time" content="2020-09-28T11:00:23.000Z">
+<meta property="article:modified_time" content="2020-09-30T03:41:02.792Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="基础语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/waringhu/assets/raw/master/img/image-20200626164658226.png">
+
+
+<link rel="canonical" href="https://waringhu.com/20Sep28C/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>2.数据类型 | WARINGHU'S BLOG</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WARINGHU'S BLOG</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#type"><span class="nav-number">3.</span> <span class="nav-text">type()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#len"><span class="nav-number">4.</span> <span class="nav-text">len()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B4%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">7.</span> <span class="nav-text">数据类型的转换</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="waringhu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">waringhu</p>
+  <div class="site-description" itemprop="description">停留是刹那，转身即天涯</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/waringhu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;waringhu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:waringhu@163.com" title="E-Mail → mailto:waringhu@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20Sep28C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2.数据类型
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-28 19:00:23" itemprop="dateCreated datePublished" datetime="2020-09-28T19:00:23+08:00">2020-09-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-30 11:41:02" itemprop="dateModified" datetime="2020-09-30T11:41:02+08:00">2020-09-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python-%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python 自学笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>如题。</p>
+<a id="more"></a>
+
+<p>计算机是做数学运算的机器，它不仅可以处理各种数值，还可以处理文本、音频、视频、图形图像等数据。</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><blockquote>
+<p>string，计算机中一般简写：str</p>
+</blockquote>
+<p>字符串的呈现方式一般是用<strong>单引号</strong>或者<strong>双引号</strong>括起来的文本，eg. <code>&#39;中国&#39;</code>、<code>&quot;cHINA&quot;</code> etc.</p>
+<p>使用单引号或者是双引号都是一样的效果，而且单引号和双引号只是一种表达方式，它<strong>不属于字符串的一部分</strong>。</p>
+<p>💢如果字符串内部包含了单引号【<code>&#39;&#39;</code>】或者双引号【<code>&quot;&quot;</code>】的话，就需要转义字符【<code>\</code>】来标识。</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：这是错误的</span></span><br><span class="line">print(<span class="string">&#x27;Let&#x27;</span>s go! go! go!<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p> SyntaxError: invalid syntax </p>
+</blockquote>
+<p>以上，Python 会报错说“语法错误”，因为 Python 会从左到右匹配引号，所以在这个语句中，<code>Let</code> 被识别成了字符串，那么后面的 <code>s go! go! go!&#39;</code> 计算机就理解不了了，于是产生了错误。</p>
+<p>当我们使用转义字符后：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 转义字符【\】可以改变连接在其后的字符的本意，使其后的【&#x27;】不再具备标记字符串的功能</span></span><br><span class="line">print(<span class="string">&#x27;Let\&#x27;s go! go! go!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>Let’s go! go! go!</p>
+</blockquote>
+<p>对于这样的问题，除了使用转义字符，还可以这样：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;Let&#x27;s go! go! go!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>Let’s go! go! go!</p>
+</blockquote>
+<p>因为使用了 <code>&quot;&quot;</code> 来标记字符串，与 Let’s 内部的单引号有所不同了，所以 Python 就能够区分它们。</p>
+<p>当然这可以这么用：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;川普说：&quot;CHINA IS THE BEST!&quot;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>川普说：”CHINA IS THE BEST!”</p>
+</blockquote>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><p>这是另外一种转义字符，用来换行：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;1x1=1 \n 1x2=2 2x2=4 \n 1x3=3 2x3=6 3x3=9&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>1x1=1</p>
+<p>1x2=2 2x2=4</p>
+<p>1x3=3 2x3=6 3x3=9</p>
+</blockquote>
+<p>更多的转义字符：</p>
+<p><img src="https://gitee.com/waringhu/assets/raw/master/img/image-20200626164658226.png" alt="image-20200626164658226"></p>
+<h1 id="type"><a href="#type" class="headerlink" title="type()"></a>type()</h1><p>用于获取数据的数据类型：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="string">&#x27;人类懂王&#x27;</span></span><br><span class="line">print(type(flag))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>&lt;class ‘str’&gt;</p>
+</blockquote>
+<p>这里，<code>class</code> 表示类，而 <code>str</code> 表示字符串，所以这里的 <code>flag</code> 里存放的是一个<em>字符串的类</em>。</p>
+<h1 id="len"><a href="#len" class="headerlink" title="len()"></a>len()</h1><p>用于获取数据的长度：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="string">&#x27;没人比我更懂病毒&#x27;</span></span><br><span class="line">print(len(flag))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>8</p>
+</blockquote>
+<p>表示这里的 <code>flag</code> 里存放的字符串的长度是：<code>8</code></p>
+<h1 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h1><blockquote>
+<p>integer，简写为：int</p>
+</blockquote>
+<p>Python 可以处理任意大小的整数，包括负整数，在程序中的表示方法和数学上的一模一样。</p>
+<p>Python 中整数可以做的运算类型：</p>
+<p><img src="https://gitee.com/waringhu/assets/raw/master/img/image-20200626170049456.png" alt="image-20200626170049456"></p>
+<p>注意：<code>3</code> 和 <code>&#39;3&#39;</code> 有什么区别？</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(type(<span class="number">3</span>))</span><br><span class="line">print(type(<span class="string">&#x27;3&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>&lt;class ‘int’&gt;</p>
+<p>&lt;class ‘str’&gt;</p>
+</blockquote>
+<p>而且，整数这个数据类型是没有 len() 函数的：</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(len(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p> TypeError: object of type ‘int’ has no len() </p>
+</blockquote>
+<h1 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h1><blockquote>
+<p>float，没有简写</p>
+</blockquote>
+<p>带有小数点的数字都是浮点数，浮点数和整数在计算机内部的存储方式是不同的。</p>
+<p>而且，<strong>整数运算永远是精确的（包括除法）</strong>，但是浮点数的运算则可能存在四舍五入的误差。</p>
+<p>浮点数这个数据类型也是没有 len() 函数的，也就是浮点数这个类型没有长度。</p>
+<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="number">0</span></span><br><span class="line">print(<span class="string">&#x27;女装只有&#x27;</span> + flag + <span class="string">&#x27;次和无数次！&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>你以为会是：<code>女装只有0次和无数次！</code></p>
+<p>输出：</p>
+<blockquote>
+<p>TypeError: must be str, not int </p>
+</blockquote>
+<p>意思是类型错误：必须是字符串，而不是整数。</p>
+<p>这表明整数和字符串两个不同的数据类型是不可以直接通过 + 连接的，所以我们必须转换数据类型，只有相同的数据类型才可以通过 + 连接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将其他数据类型转换成字符串</span></span><br><span class="line">str()</span><br><span class="line"><span class="comment"># 将其他数据类型转换成整数</span></span><br><span class="line">int()</span><br><span class="line"><span class="comment"># 将其他数据类型转换成浮点数</span></span><br><span class="line">float()</span><br></pre></td></tr></table></figure>
+
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="number">0</span></span><br><span class="line">print(<span class="string">&#x27;女装只有&#x27;</span> + str(flag) + <span class="string">&#x27;次和无数次！&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>女装只有0次和无数次！</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag"># 基础语法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20Sep28B/" rel="prev" title="1.input()函数与变量">
+                  <i class="fa fa-chevron-left"></i> 1.input()函数与变量
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20Sep30A/" rel="next" title="3.条件判断">
+                  3.条件判断 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">waringhu</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

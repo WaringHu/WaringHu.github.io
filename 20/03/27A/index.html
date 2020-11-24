@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/inullbyte-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/inullbyte-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/inullbyte-16x16.png">
+  <link rel="mask-icon" href="/images/inullbyte.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="写篇文章用来简单记录一下我的多端云同步生态的搭建思路以及过程 现在真的是云上时代啊，所有东西都放在云端的感觉很奇妙，一伸手就能拿到，用完了它自己就能同步修改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建我的多端云同步生态">
+<meta property="og:url" content="https://waringhu.com/20/03/27A/index.html">
+<meta property="og:site_name" content="WARINGHU&#39;S BLOG">
+<meta property="og:description" content="写篇文章用来简单记录一下我的多端云同步生态的搭建思路以及过程 现在真的是云上时代啊，所有东西都放在云端的感觉很奇妙，一伸手就能拿到，用完了它自己就能同步修改">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-27T08:23:33.000Z">
+<meta property="article:modified_time" content="2020-11-24T06:26:21.843Z">
+<meta property="article:author" content="waringhu">
+<meta property="article:tag" content="坚果云">
+<meta property="article:tag" content="WebDAV">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://waringhu.com/20/03/27A/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>搭建我的多端云同步生态 | WARINGHU'S BLOG</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">WARINGHU'S BLOG</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E6%9C%B5%E2%98%81"><span class="nav-number">1.</span> <span class="nav-text">一朵☁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%94%9F%E6%80%81%E5%9C%88%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">我的生态圈：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text">1. 账号密码同步管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BA%AF%E7%BA%AF%E5%86%99%E4%BD%9C%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.</span> <span class="nav-text">2. 纯纯写作同步管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Evernote-%E9%99%84%E4%BB%B6%E5%AF%84%E5%AD%98%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.</span> <span class="nav-text">3. Evernote 附件寄存系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%A7%81%E4%BA%BA%E4%BA%91%E7%9B%98%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.4.</span> <span class="nav-text">4. 私人云盘系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%98%93%E7%A0%81%E7%AC%94%E8%AE%B0%E5%90%8C%E6%AD%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.5.</span> <span class="nav-text">5. 易码笔记同步管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%E2%80%A6"><span class="nav-number">2.6.</span> <span class="nav-text">6. 未完待续…</span></a></li></ol></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="waringhu"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">waringhu</p>
+  <div class="site-description" itemprop="description">停留是刹那，转身即天涯</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/waringhu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;waringhu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:waringhu@163.com" title="E-Mail → mailto:waringhu@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waringhu.com/20/03/27A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="waringhu">
+      <meta itemprop="description" content="停留是刹那，转身即天涯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WARINGHU'S BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          搭建我的多端云同步生态
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-03-27 16:23:33" itemprop="dateCreated datePublished" datetime="2020-03-27T16:23:33+08:00">2020-03-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-11-24 14:26:21" itemprop="dateModified" datetime="2020-11-24T14:26:21+08:00">2020-11-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/" itemprop="url" rel="index"><span itemprop="name">互联网生活优化指南</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>写篇文章用来简单记录一下我的多端云同步生态的搭建思路以及过程</p>
+<p>现在真的是云上时代啊，所有东西都放在云端的感觉很奇妙，一伸手就能拿到，用完了它自己就能同步修改</p>
+<a id="more"></a>
+
+<h1 id="一朵☁"><a href="#一朵☁" class="headerlink" title="一朵☁"></a>一朵☁</h1><p>不管你使用📱还是电脑，或者是平板，只需要一朵☁，当然不能是百度云，我使用的坚果云，那个曾经一直被我误以为是🔨的坚果的坚果云，真的是好用，免费版每个月的传输流量于我已经足够，再加上它桀骜不驯从不打折，会员可能是用不上了</p>
+<p>所以我的多端云同步的核心就是坚果云，这朵☁足够快速，空间也足够我使用，其实到目前为止我只利用坚果云搭建了一个同步系统，它只有一个功能，就是同步管理我的账号密码</p>
+<p>然后我还将纯纯写作和记时光备份在坚果云，纯纯写作的备份机制真的很强大，一旦配置可以完全不用再管它，而记时光到目前为止我的使用体验感受一般（可能是因为我对它的需求不高，所以使用频率也很低），备份坚果云似乎需要手动备份（每次进入 App 也会启动备份），而且一次备份就是上传所有备份文件压缩包</p>
+<h1 id="我的生态圈："><a href="#我的生态圈：" class="headerlink" title="我的生态圈："></a>我的生态圈：</h1><h2 id="1-账号密码同步管理系统"><a href="#1-账号密码同步管理系统" class="headerlink" title="1. 账号密码同步管理系统"></a>1. 账号密码同步管理系统</h2><ul>
+<li>电脑端：KeePass</li>
+<li>Android：KeePass2Android</li>
+</ul>
+<p>电脑端使用 KeePass 将密码数据库创建在坚果云同步文件夹内，将 KeePass2Android 与坚果云上的密码数据库文件通过 Webdav 链接，使用密码数据库的管理密码 + 密钥文件打开数据库，进而查看、管理账号密码</p>
+<p>Android 一旦发生改动，坚果云会自动同步密码数据库文件，在电脑端打开密码数据库密码已然更新，即完成数据同步，同理在电脑端发生改动，经坚果云同步后，Android 端访问密码数据库看到的已经是最新的数据了</p>
+<h2 id="2-纯纯写作同步管理系统"><a href="#2-纯纯写作同步管理系统" class="headerlink" title="2. 纯纯写作同步管理系统"></a>2. 纯纯写作同步管理系统</h2><ul>
+<li>Android：纯纯写作</li>
+<li>电脑端：Pure Wirter Alpha</li>
+</ul>
+<p>这个系统其实并不依靠坚果云实现同步，甚至他们之间根本不能同步，我只是使用坚果云通过 Webdav 实时备份我在纯纯写作创作的内容，依然可以看作是使用坚果云管理我的写作内容</p>
+<p>然而纯纯写作电脑端与 Android 的同步则是能是写作时的文字输入瞬间同步，依靠局域网连接实现，但是效果真的很棒，虽然现在电脑端处于 Alpha 阶段会经常断连，可是依然不影响我喜欢用它</p>
+<h2 id="3-Evernote-附件寄存系统"><a href="#3-Evernote-附件寄存系统" class="headerlink" title="3. Evernote 附件寄存系统"></a>3. Evernote 附件寄存系统</h2><p>同样的在这个系统里依然不存在多端同步的内容，但是它却是依托坚果云解决了我的大麻烦</p>
+<p>Evernote 每个月保存的笔记是有流量限制的，所以一旦我的笔记里需要插入什么文件那我这个月的给定流量可能不能撑到月底，我是不会开会员的（国内的印象笔记真的越来越臃肿，最近准备迁移至 WizNote），而现在，当我需要在笔记里添加文件时，我会将文件上传到坚果云，然后通过连接分享写入 Evernote 笔记里，很大程度的节省了我的 Evernote 每月流量</p>
+<h2 id="4-私人云盘系统"><a href="#4-私人云盘系统" class="headerlink" title="4. 私人云盘系统"></a>4. 私人云盘系统</h2><p>我将坚果云作为自己的私人云盘，仅仅用于保存小体积、使用频率高的文件，因为它空间小又因为它速度快，即可以代替我的 OneDrive，更能代替我的百度云，当然百度云还是要用的，只是仅仅用来存放体积庞大、不经常使用的文件</p>
+<h2 id="5-易码笔记同步管理系统"><a href="#5-易码笔记同步管理系统" class="headerlink" title="5. 易码笔记同步管理系统"></a>5. 易码笔记同步管理系统</h2><ul>
+<li>Android：易码</li>
+<li>电脑端：支持 MarkDown 的文本编辑器，我使用 Typora</li>
+</ul>
+<p>易码的 MarkDown 文件是以“库”的形式保存，“库”可以是本地文件夹，也可以是云盘里的文件夹，同时易码支持 Webdav，所以我在坚果云里创建同步文件夹，在易码中将其设置为“库”</p>
+<p>这样当我在易码里编辑 MarkDown 文档，就会通过 Webdav 保存至坚果云，同时电脑端可以同步更新，使用编辑器在电脑端修改文件之后经过坚果云同步，易码上刷新就会同步最新的“库”</p>
+<p>但是易码的开发者已经停止了对于易码的维护，所以我现在也一直在寻找新的替代品，前段时间纯纯写作的作者 Darkeet 说纯纯后续会支持完全云同步，替代易码指日可待✌</p>
+<h2 id="6-未完待续…"><a href="#6-未完待续…" class="headerlink" title="6. 未完待续…"></a>6. 未完待续…</h2><p>更多坚果云的使用配方我一直还在研究中…</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%9D%9A%E6%9E%9C%E4%BA%91/" rel="tag"># 坚果云</a>
+              <a href="/tags/WebDAV/" rel="tag"># WebDAV</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20/03/24B/" rel="prev" title="记·博客搭建">
+                  <i class="fa fa-chevron-left"></i> 记·博客搭建
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/20/04/07A/" rel="next" title="计算机图形学概论">
+                  计算机图形学概论 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">waringhu</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+</body>
+</html>

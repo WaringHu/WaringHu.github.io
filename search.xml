@@ -84,34 +84,6 @@
       </tags>
   </entry>
   <entry>
-    <title>#954 单链表的链接</title>
-    <url>/swustoj/954/</url>
-    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为 n 的单链表 A 和长度为 m 的单链表 B 。编程实现将 B 表链接在 A 表的尾端，形成一个单链表 A 。数据类型指定为字符型。</p>
-<a id="more"></a>
-
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
-<p>第一行为A表的长度n；<br>第二行为A表中的数据元素;<br>第三行为B表的长度m；<br>第四行为B表中的数据元素。</p>
-</blockquote>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
-<p>输出为链接好后的A表中的所有数据元素。</p>
-</blockquote>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
-<p>4<br>A B C D<br>6<br>1 2 3 4 5 6</p>
-</blockquote>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
-<p>A B C D 1 2 3 4 5 6</p>
-</blockquote>
-<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt; List1;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt; List2;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="keyword">char</span> arr1[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">char</span> arr2[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr1[i];</span><br><span class="line">        List1.push_back(arr1[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr2[i];</span><br><span class="line">        List2.push_back(arr2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt;::iterator iter;</span><br><span class="line">    <span class="keyword">for</span>(iter = List2.begin(); iter != List2.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        List1.push_back(*iter);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(iter = List1.begin(); iter != List1.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SWUSTOJ 题解系列</category>
-      </categories>
-      <tags>
-        <tag>SWUST</tag>
-        <tag>OJ</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>#952 单链表的插入操作的实现</title>
     <url>/swustoj/952/</url>
     <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为 n 的单链表，在第 i 个结点之前插入数据元素 data。</p>
@@ -158,6 +130,34 @@
 <p>1 3 4 5</p>
 </blockquote>
 <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; List;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">1000</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; arr[i];</span><br><span class="line">		List.push_back(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m; <span class="comment">// 输入要删除的参数</span></span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">if</span> (m &gt; List.size() || m &lt;= <span class="number">1</span>) <span class="comment">// 输入不合法</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;error!&quot;</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i!=m &amp;&amp; i&lt;List.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		iter++;</span><br><span class="line">	&#125;</span><br><span class="line">	iter--; <span class="comment">// 定位前一个节点</span></span><br><span class="line">	List.erase(iter); <span class="comment">// 删除前一个节点</span></span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">for</span> (iter = List.begin(); iter != List.end(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SWUSTOJ 题解系列</category>
+      </categories>
+      <tags>
+        <tag>SWUST</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>#954 单链表的链接</title>
+    <url>/swustoj/954/</url>
+    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为 n 的单链表 A 和长度为 m 的单链表 B 。编程实现将 B 表链接在 A 表的尾端，形成一个单链表 A 。数据类型指定为字符型。</p>
+<a id="more"></a>
+
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
+<p>第一行为A表的长度n；<br>第二行为A表中的数据元素;<br>第三行为B表的长度m；<br>第四行为B表中的数据元素。</p>
+</blockquote>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
+<p>输出为链接好后的A表中的所有数据元素。</p>
+</blockquote>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
+<p>4<br>A B C D<br>6<br>1 2 3 4 5 6</p>
+</blockquote>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
+<p>A B C D 1 2 3 4 5 6</p>
+</blockquote>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt; List1;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt; List2;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="keyword">char</span> arr1[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">char</span> arr2[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr1[i];</span><br><span class="line">        List1.push_back(arr1[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr2[i];</span><br><span class="line">        List2.push_back(arr2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt;::iterator iter;</span><br><span class="line">    <span class="keyword">for</span>(iter = List2.begin(); iter != List2.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        List1.push_back(*iter);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(iter = List1.begin(); iter != List1.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>SWUSTOJ 题解系列</category>
@@ -631,6 +631,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Java 方法的定义及使用【Java 学习笔记 08】</title>
+    <url>/20/03/23A/</url>
+    <content><![CDATA[<p>在程序之中，很多情况下需要重复执行一些代码，方法（method）也称之为函数，需要注意的是，进行方法定义有一个前提：方法在主类中定义并且由主方法直接调用</p>
+<a id="more"></a>
+
+<h1 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h1><p>方法的返回值可以使用 Java 中定义的数据类型（基本数据类型、引用数据类型），在方法之中可以进行返回数据的处理，如果要返回数据就是用 return 来描述，return 返回的数据类型与方法返回值的数据类型相同，如果不返回数据则该方法可以使用 void 进行声明</p>
+<p>关于方法名称与变量的定义命名要求：</p>
+<ul>
+<li>方法名称：第一个单词字母小写，而后每个单词的首字母大写</li>
+<li>变量名称：第一个单词字母小写，而后每个单词的首字母大写</li>
+</ul>
+<p>方法的定义可以方便使用者重复调用，所有的程序都是从主方法开始的，方法定义不要太长，应使单个方法容易理解</p>
+<p>在进行方法定义的时候，如果方法的返回值类型为 void，那么可以利用 return 来结束调用</p>
+<h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><p>当方法名称相同，参数的类型或者个数不同的时候就叫方法重载</p>
+<p>eg. 不同类型的数据进行加法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">10</span>, <span class="number">10</span>));</span><br><span class="line">        System.out.println(sum(<span class="number">20.0</span>, <span class="number">10.1</span>));</span><br><span class="line">        System.out.println(sum(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y + z;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同一个方法名称可以根据调用时传递的不同参数的类型或个数实现不同方法体的调用，这就实现了方法重载的定义，方法的重载与方法的返回值类型没有任何关系，只与参数有关，但是实际开发中：只要是方法重载，建议保持其方法的返回值类型相同</p>
+<p>eg. <code>System.out.println();</code> 就是一个系统自带的方法重载，它可以接收不同数据类型的参数</p>
+<h1 id="方法递归调用"><a href="#方法递归调用" class="headerlink" title="方法递归调用"></a>方法递归调用</h1><p>方法的递归调用指的是一个方法自己调用自己，利用递归调用可以解决一些重复且麻烦的问题，在进行方法递归调用时，需要考虑如下问题：</p>
+<ul>
+<li>一定要设置方法递归调用的结束条件</li>
+<li>每一次调用的过程之中一定要修改传递的参数条件</li>
+</ul>
+<p>eg. 利用递归求 1 + 2 + 3 + … … + 1000</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">1000</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num + sum(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>递归可以简化代码调用，但是实际开发很少会出现递归，大部分情况下都只是考虑一些简单的处理逻辑，递归如果使用不当，则会造成内存溢出</p>
+<p>eg. 计算 1! + 2! + 3! + … … + 90!</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">90</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fan(num) + sum(num -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">fan</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num * fan(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际上有一部分递归是可以通过循环来完成的，但是使用递归要比使用循环结构更清晰简洁</p>
+]]></content>
+      <categories>
+        <category>Java 学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 类与对象【Java 学习笔记 09】</title>
     <url>/20/03/24A/</url>
     <content><![CDATA[<p>Java 语言最大的特点在于面向对象的编程设计，并且面向对象的编程设计也在由于 Java 自身的发展而不断发展，同时很多最初不支持面向对象的编程语言都开始转向了面向对象编程，但也有人认为面向过程编程会更好，或者是使用函数式编程会更好</p>
@@ -692,48 +734,6 @@
 
 <h1 id="引用与垃圾产生分析"><a href="#引用与垃圾产生分析" class="headerlink" title="引用与垃圾产生分析"></a>引用与垃圾产生分析</h1><p>引用传递如果处理不当，会造成垃圾的产生，所谓的垃圾空间就是没有任何栈内存所指向的堆内存空间，所有的垃圾将被 GC（Garbage Collector）不定期进行回收并且释放无用内存空间，但是如果垃圾过多，一定会影响 GC 的处理性能，从而降低整体的程序性能，所以在实际的开发之中，对于垃圾的产生应该越少越好</p>
 <p>一个栈内存只能保存一个堆内存的地址数据，如果发生更改，则之前的地址数据将从此栈内存中彻底消失</p>
-]]></content>
-      <categories>
-        <category>Java 学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 方法的定义及使用【Java 学习笔记 08】</title>
-    <url>/20/03/23A/</url>
-    <content><![CDATA[<p>在程序之中，很多情况下需要重复执行一些代码，方法（method）也称之为函数，需要注意的是，进行方法定义有一个前提：方法在主类中定义并且由主方法直接调用</p>
-<a id="more"></a>
-
-<h1 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h1><p>方法的返回值可以使用 Java 中定义的数据类型（基本数据类型、引用数据类型），在方法之中可以进行返回数据的处理，如果要返回数据就是用 return 来描述，return 返回的数据类型与方法返回值的数据类型相同，如果不返回数据则该方法可以使用 void 进行声明</p>
-<p>关于方法名称与变量的定义命名要求：</p>
-<ul>
-<li>方法名称：第一个单词字母小写，而后每个单词的首字母大写</li>
-<li>变量名称：第一个单词字母小写，而后每个单词的首字母大写</li>
-</ul>
-<p>方法的定义可以方便使用者重复调用，所有的程序都是从主方法开始的，方法定义不要太长，应使单个方法容易理解</p>
-<p>在进行方法定义的时候，如果方法的返回值类型为 void，那么可以利用 return 来结束调用</p>
-<h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><p>当方法名称相同，参数的类型或者个数不同的时候就叫方法重载</p>
-<p>eg. 不同类型的数据进行加法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">10</span>, <span class="number">10</span>));</span><br><span class="line">        System.out.println(sum(<span class="number">20.0</span>, <span class="number">10.1</span>));</span><br><span class="line">        System.out.println(sum(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y + z;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同一个方法名称可以根据调用时传递的不同参数的类型或个数实现不同方法体的调用，这就实现了方法重载的定义，方法的重载与方法的返回值类型没有任何关系，只与参数有关，但是实际开发中：只要是方法重载，建议保持其方法的返回值类型相同</p>
-<p>eg. <code>System.out.println();</code> 就是一个系统自带的方法重载，它可以接收不同数据类型的参数</p>
-<h1 id="方法递归调用"><a href="#方法递归调用" class="headerlink" title="方法递归调用"></a>方法递归调用</h1><p>方法的递归调用指的是一个方法自己调用自己，利用递归调用可以解决一些重复且麻烦的问题，在进行方法递归调用时，需要考虑如下问题：</p>
-<ul>
-<li>一定要设置方法递归调用的结束条件</li>
-<li>每一次调用的过程之中一定要修改传递的参数条件</li>
-</ul>
-<p>eg. 利用递归求 1 + 2 + 3 + … … + 1000</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">1000</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num + sum(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>递归可以简化代码调用，但是实际开发很少会出现递归，大部分情况下都只是考虑一些简单的处理逻辑，递归如果使用不当，则会造成内存溢出</p>
-<p>eg. 计算 1! + 2! + 3! + … … + 90!</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(sum(<span class="number">90</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fan(num) + sum(num -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">fan</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num * fan(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>实际上有一部分递归是可以通过循环来完成的，但是使用递归要比使用循环结构更清晰简洁</p>
 ]]></content>
       <categories>
         <category>Java 学习笔记</category>
@@ -909,99 +909,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我是如何提升我的网站访问速度的？</title>
-    <url>/20/04/07B/</url>
-    <content><![CDATA[<p>这是提升前后的网站响应速度对比：</p>
-<ul>
-<li>提升之前👇</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/00.png" alt="00.png"></p>
-<ul>
-<li>提升之后👇</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/01.png" alt="01.png"></p>
-<p>绿油油的真不错！✔</p>
-<a id="more"></a>
-
-<h1 id="GitHub-Coding"><a href="#GitHub-Coding" class="headerlink" title="GitHub + Coding"></a>GitHub + Coding</h1><p>最开始我的网站只在 GitHub 托管，由于 GitHub 服务器在海外，从大天朝访问总是时断时续的，然后我看到了 <a href="https://www.itrhx.com/">TRHX</a> 的 Hexo 系列中讲如何实现 GitHub + Coding 双线部署的文章</p>
-<blockquote>
-<p>建议小白们熟读并背诵 TRHX 的 Hexo 系列[滑稽]</p>
-</blockquote>
-<p>然后我就在 Coding 上也部署了我的博客，具体操作👉<a href="https://blog.csdn.net/qq_36759224/article/details/100879609">传送门</a></p>
-<p>这里我只补充一点点，由于 Coding 被腾讯收购，后来的 Coding 就和腾讯云开发者平台合并了，所以不管你是从 <code>https://coding.net/</code> 还是 <code>https://dev.tencent.com/</code> 登陆注册都是一样的会进入 Coding</p>
-<p>还有就是关于仓库开启 Pages 服务，很多人找不到在哪部署静态网站，因为 Coding 新建仓库只默认开启如图的功能，其他功能开关需要自己打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/02.png" alt="02.png"></p>
-<ul>
-<li>点击左下角<strong>项目设置</strong></li>
-<li>点击右侧<strong>功能开关</strong></li>
-<li>开启<strong>构建与部署</strong></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/03.png" alt="03.png"></p>
-<p>然后回到你的仓库，在左侧构建与部署里点击静态网站，就可以开始部署 Pages 服务了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/04.png" alt="04.png"></p>
-<p>当我完成一顿操作之后，部署成功了，但是我的站点访问更慢了！！！🤢</p>
-<blockquote>
-<p>Tips：Coding 的服务器在新加坡</p>
-</blockquote>
-<h1 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h1><p>中文版 GitHub，服务器在国内，之前也在上面托管过代码，但是一直没想到它也有 Pages 服务</p>
-<p>以下是我在码云上部署站点的过程</p>
-<p>码云上即使你的仓库与用户名不同也可以开启 Pages 服务，但是如果不使用与用户名相同的仓库，部署 Pages 服务之后你的首页访问地址将带有二级目录，这会影响之后的域名解析</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/05.png" alt="05.png"></p>
-<p>步骤：</p>
-<h2 id="1-创建一个与用户名同名的仓库"><a href="#1-创建一个与用户名同名的仓库" class="headerlink" title="1. 创建一个与用户名同名的仓库"></a>1. 创建一个与用户名同名的仓库</h2><p>略</p>
-<h2 id="2-复制仓库的-HTTPS-地址"><a href="#2-复制仓库的-HTTPS-地址" class="headerlink" title="2. 复制仓库的 HTTPS 地址"></a>2. 复制仓库的 HTTPS 地址</h2><p>当然使用 SSH 也是可以的，个人推荐码云可以使用 HTTPS，因为速度够快，使用也更方便</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/06.png" alt="06.png"></p>
-<h2 id="3-在站点目录里配置仓库地址"><a href="#3-在站点目录里配置仓库地址" class="headerlink" title="3. 在站点目录里配置仓库地址"></a>3. 在站点目录里配置仓库地址</h2><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/07.png" alt="07.png"></p>
-<h2 id="4-推送站点代码"><a href="#4-推送站点代码" class="headerlink" title="4. 推送站点代码"></a>4. 推送站点代码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p>当 Git 开始向码云推送代码时，系统会弹出窗口需要你输入你的码云用户名 + 密码，这就完成了本地与码云的连接</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/11.png" alt="11.png"></p>
-<h2 id="5-开启-Pages-服务"><a href="#5-开启-Pages-服务" class="headerlink" title="5. 开启 Pages 服务"></a>5. 开启 Pages 服务</h2><p>点击仓库右上角<strong>服务</strong><br>点击<strong>Gitee Pages</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/08.png" alt="08.png"></p>
-<p>这里一切默认即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/09.png" alt="09.png"></p>
-<h2 id="6-域名解析"><a href="#6-域名解析" class="headerlink" title="6. 域名解析"></a>6. 域名解析</h2><p>略</p>
-<h1 id="最后优化"><a href="#最后优化" class="headerlink" title="最后优化"></a>最后优化</h1><p>又是一顿操作下来，我已经将我的站点同时部署在 GitHub + Coding + Gitee 上了，然后测试发现国内绝大部分地区访问我的站点时解析的都是码云的 IP 地址，所以码云的访问速度完胜</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/10.PNG" alt="10.png"></p>
-<p>最后我放弃了继续使用 Coding，而 GitHub 也只作为站点备份，所以我在控制台中停掉了 GitHub + Coding 的解析</p>
-]]></content>
-      <categories>
-        <category>博客纪要</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客错误日志</title>
-    <url>/20/04/08B/</url>
-    <content><![CDATA[<p>没有简介😮</p>
-<a id="more"></a>
-
-<h1 id="1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误"><a href="#1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误" class="headerlink" title="1. Hexo 对 和` 括起来的内容将被解析，这可能会引发错误"></a>1. Hexo 对 {{}} 的解析
-
-> Unhandled rejection Nunjucks Error
-
-Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的内容将被解析，这可能会引发错误</h1><p>比如我使用 LaTeX 写一个字符 $A_{{c}'}$ ==&gt; <code>$A_{{c}'}$</code> 然后 <code>hexo g</code> 出现报错：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/00.png" alt="00.png"></p>
-<p>它提示我的第五行，也就是刚刚的字符出错了</p>
-<p><strong>如何解决：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 &#123;% raw %&#125; &#123;% endraw %&#125; 将你不希望使用 Nunjucks 解析的内容括起来</span><br><span class="line"></span><br><span class="line">注意：&#123;% raw %&#125; &#123;% endraw %&#125; 在代码块中不会被解析，也就起不了作用，但是代码块中的 &#123;&#123;&#125;&#125; 本身也是不会被解析的</span><br></pre></td></tr></table></figure>
-
-<p>eg.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">$A_&#123;&#123;c&#125;&#39;&#125;$</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后看看我这部分文字是怎么写的你可能就更清楚了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/01.png" alt="01.png"></p>
-]]></content>
-      <categories>
-        <category>博客纪要</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机图形学概论</title>
     <url>/20/04/07A/</url>
     <content><![CDATA[<blockquote>
@@ -1129,6 +1036,70 @@ Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的�
       <tags>
         <tag>学习笔记</tag>
         <tag>计算机图形学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我是如何提升我的网站访问速度的？</title>
+    <url>/20/04/07B/</url>
+    <content><![CDATA[<p>这是提升前后的网站响应速度对比：</p>
+<ul>
+<li>提升之前👇</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/00.png" alt="00.png"></p>
+<ul>
+<li>提升之后👇</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/01.png" alt="01.png"></p>
+<p>绿油油的真不错！✔</p>
+<a id="more"></a>
+
+<h1 id="GitHub-Coding"><a href="#GitHub-Coding" class="headerlink" title="GitHub + Coding"></a>GitHub + Coding</h1><p>最开始我的网站只在 GitHub 托管，由于 GitHub 服务器在海外，从大天朝访问总是时断时续的，然后我看到了 <a href="https://www.itrhx.com/">TRHX</a> 的 Hexo 系列中讲如何实现 GitHub + Coding 双线部署的文章</p>
+<blockquote>
+<p>建议小白们熟读并背诵 TRHX 的 Hexo 系列[滑稽]</p>
+</blockquote>
+<p>然后我就在 Coding 上也部署了我的博客，具体操作👉<a href="https://blog.csdn.net/qq_36759224/article/details/100879609">传送门</a></p>
+<p>这里我只补充一点点，由于 Coding 被腾讯收购，后来的 Coding 就和腾讯云开发者平台合并了，所以不管你是从 <code>https://coding.net/</code> 还是 <code>https://dev.tencent.com/</code> 登陆注册都是一样的会进入 Coding</p>
+<p>还有就是关于仓库开启 Pages 服务，很多人找不到在哪部署静态网站，因为 Coding 新建仓库只默认开启如图的功能，其他功能开关需要自己打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/02.png" alt="02.png"></p>
+<ul>
+<li>点击左下角<strong>项目设置</strong></li>
+<li>点击右侧<strong>功能开关</strong></li>
+<li>开启<strong>构建与部署</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/03.png" alt="03.png"></p>
+<p>然后回到你的仓库，在左侧构建与部署里点击静态网站，就可以开始部署 Pages 服务了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/04.png" alt="04.png"></p>
+<p>当我完成一顿操作之后，部署成功了，但是我的站点访问更慢了！！！🤢</p>
+<blockquote>
+<p>Tips：Coding 的服务器在新加坡</p>
+</blockquote>
+<h1 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h1><p>中文版 GitHub，服务器在国内，之前也在上面托管过代码，但是一直没想到它也有 Pages 服务</p>
+<p>以下是我在码云上部署站点的过程</p>
+<p>码云上即使你的仓库与用户名不同也可以开启 Pages 服务，但是如果不使用与用户名相同的仓库，部署 Pages 服务之后你的首页访问地址将带有二级目录，这会影响之后的域名解析</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/05.png" alt="05.png"></p>
+<p>步骤：</p>
+<h2 id="1-创建一个与用户名同名的仓库"><a href="#1-创建一个与用户名同名的仓库" class="headerlink" title="1. 创建一个与用户名同名的仓库"></a>1. 创建一个与用户名同名的仓库</h2><p>略</p>
+<h2 id="2-复制仓库的-HTTPS-地址"><a href="#2-复制仓库的-HTTPS-地址" class="headerlink" title="2. 复制仓库的 HTTPS 地址"></a>2. 复制仓库的 HTTPS 地址</h2><p>当然使用 SSH 也是可以的，个人推荐码云可以使用 HTTPS，因为速度够快，使用也更方便</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/06.png" alt="06.png"></p>
+<h2 id="3-在站点目录里配置仓库地址"><a href="#3-在站点目录里配置仓库地址" class="headerlink" title="3. 在站点目录里配置仓库地址"></a>3. 在站点目录里配置仓库地址</h2><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/07.png" alt="07.png"></p>
+<h2 id="4-推送站点代码"><a href="#4-推送站点代码" class="headerlink" title="4. 推送站点代码"></a>4. 推送站点代码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>当 Git 开始向码云推送代码时，系统会弹出窗口需要你输入你的码云用户名 + 密码，这就完成了本地与码云的连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/11.png" alt="11.png"></p>
+<h2 id="5-开启-Pages-服务"><a href="#5-开启-Pages-服务" class="headerlink" title="5. 开启 Pages 服务"></a>5. 开启 Pages 服务</h2><p>点击仓库右上角<strong>服务</strong><br>点击<strong>Gitee Pages</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/08.png" alt="08.png"></p>
+<p>这里一切默认即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/09.png" alt="09.png"></p>
+<h2 id="6-域名解析"><a href="#6-域名解析" class="headerlink" title="6. 域名解析"></a>6. 域名解析</h2><p>略</p>
+<h1 id="最后优化"><a href="#最后优化" class="headerlink" title="最后优化"></a>最后优化</h1><p>又是一顿操作下来，我已经将我的站点同时部署在 GitHub + Coding + Gitee 上了，然后测试发现国内绝大部分地区访问我的站点时解析的都是码云的 IP 地址，所以码云的访问速度完胜</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/10.PNG" alt="10.png"></p>
+<p>最后我放弃了继续使用 Coding，而 GitHub 也只作为站点备份，所以我在控制台中停掉了 GitHub + Coding 的解析</p>
+]]></content>
+      <categories>
+        <category>博客纪要</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1364,6 +1335,35 @@ $$d_{1} = F \left(x_{{m1}'},\;y_{{m1}'}\right)$$
       </tags>
   </entry>
   <entry>
+    <title>博客错误日志</title>
+    <url>/20/04/08B/</url>
+    <content><![CDATA[<p>没有简介😮</p>
+<a id="more"></a>
+
+<h1 id="1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误"><a href="#1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误" class="headerlink" title="1. Hexo 对 和` 括起来的内容将被解析，这可能会引发错误"></a>1. Hexo 对 {{}} 的解析
+
+> Unhandled rejection Nunjucks Error
+
+Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的内容将被解析，这可能会引发错误</h1><p>比如我使用 LaTeX 写一个字符 $A_{{c}'}$ ==&gt; <code>$A_{{c}'}$</code> 然后 <code>hexo g</code> 出现报错：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/00.png" alt="00.png"></p>
+<p>它提示我的第五行，也就是刚刚的字符出错了</p>
+<p><strong>如何解决：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 &#123;% raw %&#125; &#123;% endraw %&#125; 将你不希望使用 Nunjucks 解析的内容括起来</span><br><span class="line"></span><br><span class="line">注意：&#123;% raw %&#125; &#123;% endraw %&#125; 在代码块中不会被解析，也就起不了作用，但是代码块中的 &#123;&#123;&#125;&#125; 本身也是不会被解析的</span><br></pre></td></tr></table></figure>
+
+<p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">$A_&#123;&#123;c&#125;&#39;&#125;$</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后看看我这部分文字是怎么写的你可能就更清楚了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/01.png" alt="01.png"></p>
+]]></content>
+      <categories>
+        <category>博客纪要</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【分享】阿里巴巴 Java 开发手册</title>
     <url>/20/04/09A/</url>
     <content><![CDATA[<table>
@@ -1393,134 +1393,6 @@ $$d_{1} = F \left(x_{{m1}'},\;y_{{m1}'}\right)$$
       <tags>
         <tag>Java</tag>
         <tag>编码规范</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>认识算法分析</title>
-    <url>/20/04/13B/</url>
-    <content><![CDATA[<p>不写简介不是因为懒😐</p>
-<a id="more"></a>
-
-<h1 id="什么是算法？"><a href="#什么是算法？" class="headerlink" title="什么是算法？"></a>什么是算法？</h1><p>一系列解决问题的清晰指令，能够对一定规范的输入，在有限的时间内获得要求的输出</p>
-<p>算法的特点：</p>
-<p>1. 指令清晰</p>
-<p>指令：计算机中的一行代码</p>
-<p>清晰：每一条指令不应该具有二义性，即计算机在接收到这条指令时，它的理解是唯一的</p>
-<p>2. 输入规范</p>
-<p>算法要有输入，且要确定该算法的输入范围</p>
-<p>3. 有限性</p>
-<p>算法运行的时间是有限的，只要算法能够终止，它的时间就是有限的</p>
-<p>4. 输出</p>
-<p>输出是任何一个算法必须的，如果一个算法没有输出，它就没有任何意义</p>
-<p>算法描述：同一个算法有不同的表达方式</p>
-<ol>
-<li>自然语言描述</li>
-<li>伪代码描述</li>
-</ol>
-<p>伪代码对照：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/00.png" alt="00.png"></p>
-<p>算法是问题的程序化解决方案，因此它遵循一定的流程</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/01.png" alt="01.png"></p>
-<h1 id="算法分析？"><a href="#算法分析？" class="headerlink" title="算法分析？"></a>算法分析？</h1><p>算法分析就是要分析算法的时间效率和空间效率</p>
-<p>时间效率也就是时间复杂度，反映的是算法运行需要的时间长度</p>
-<p>空间效率也就是空间复杂度，反映的是算法运行需要的存储空间</p>
-<p>算法分析的核心是分析算法的时间效率</p>
-<p>输入规模越大的算法，其需要的计算时间就越长，同时也与算法实现的程序设计语言、编译器以及运行算法的硬件设备都有关系</p>
-<p>对于输入规模很大的算法，其运行时间通常由算法的操作中那些最耗时的操作来确定</p>
-<p>四则运算的算法中，通常乘除运算比加减运算耗时更多</p>
-<p>基本操作：用算法中最耗时的操作被执行的次数来度量算法的时间</p>
-<p>一个算法的运行时间主要与输入规模和基本操作有关</p>
-<p>eg.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/02.png" alt="02.png"></p>
-<p>算法的时间效率对于不同的输入是不同的</p>
-<h1 id="时间渐进表示"><a href="#时间渐进表示" class="headerlink" title="时间渐进表示"></a>时间渐进表示</h1><p>时间渐进符号：$O$、$\Omega$、$\Theta$</p>
-<p>时间效率的渐进表示：</p>
-<ul>
-<li>$O$</li>
-</ul>
-<p>对于足够大的 $n$，函数 $t(n)$ 的上界由 $g(n)$ 的常数倍来确定，即：$t(n) \leq c g(n)$，$c$ 为常数，记为：$t(n) \in O (g(n))$</p>
-<p>$t(n)$：算法基本操作执行次数的时间多项式，eg. $t(n) = 3n^{2} + 4n + 5$</p>
-<p>$g(n)$：常见的效率类型，eg. $log_{n}$、$n$、$nlog_{n}$</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/03.png" alt="03.png"></p>
-<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的常数倍之下</p>
-<p>说明函数 $g(n)$ 对应的效率类型是该算法的下界，即：在最坏情况下，该算法的时间效率为 $O (g(n))$</p>
-<ul>
-<li>$\Omega$</li>
-</ul>
-<p>对于足够大的 $n$，函数 $t(n)$ 的下界由 $g(n)$ 的常数倍来确定，即：$t(n) \geq c g(n)$，$c$ 为常数，记为：$t(n) \in \Omega (g(n))$</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/04.png" alt="04.png"></p>
-<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的常数倍之上</p>
-<p>说明函数 $g(n)$ 对应的效率类型是该算法的上界，即：在最优情况下，该算法的时间效率为 $\Omega (g(n))$</p>
-<ul>
-<li>$\Theta$</li>
-</ul>
-<p>对于足够大的 $n$，函数 $t(n)$ 的下界和下界由 $g(n)$ 的常数倍来确定，即：$c_{2} g(n) \leq t(n) \leq c_{1} g(n)$，$c_{2}$、$c_{1}$ 为常数，记为：$t(n) \in \Theta (g(n))$</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/05.png" alt="05.png"></p>
-<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的两个常数倍之间</p>
-<p>说明函数 $g(n)$ 对应的效率类型是该算法的上界和下界之间，即：在典型输入下，该算法的时间效率为 $\Theta (g(n))$</p>
-<p>eg. 算法 1 的时间多项式：$t_{1}(n) = 2n^{2} + 4n + 20$，算法 2 的时间多项式：$t_{2}(n) = 10nlog_{n} + 5n + 3$，问：哪一个算法的效率更高</p>
-<p>$\because t_{1}(n) \in \Omega (n^{2}),;t_{2}(n) \in \Omega (nlog_{n})$</p>
-<p>$\therefore$ 算法 2 效率更高</p>
-<p><strong>定理：</strong></p>
-<p>如果：$t_{1}(n) \in O(g_{1}(n))$ 且 $t_{2}(n) \in O(g_{2}(n))$，则 $t_{1}(n) + t_{2}(n) \in O(max \left{ g_{1}(n),;g_{2}(n) \right} )$</p>
-<p>算法的基本效率类型：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/06.png" alt="06.png"></p>
-<p>如果算法的时间效率属于 $n^3$ 以上时，在输入规模 $n$ 逐渐增大的时候，这类算法的时间消耗增速很快，因此，要尽可能将设计算法的时间效率保证在 $n^3$ 以下</p>
-<h1 id="非递归算法效率分析"><a href="#非递归算法效率分析" class="headerlink" title="非递归算法效率分析"></a>非递归算法效率分析</h1><p>eg.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 MaxElement(A[0,1,...,n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 求出给定数组中的最大元素</span><br><span class="line">&#x2F;&#x2F; 输入：实数数组 A[0,1,...,n-1]</span><br><span class="line">&#x2F;&#x2F; 输出：A 中的最大元素</span><br><span class="line"></span><br><span class="line">maxval ⬅ A[0]</span><br><span class="line">for i ⬅ 1 to n-1 do</span><br><span class="line">    if A[i] &gt; maxval</span><br><span class="line">        maxval ⬅ A[i]</span><br><span class="line">return maxval</span><br></pre></td></tr></table></figure>
-
-<p>输入规模：数组长度 n</p>
-<p>基本操作：比较运算</p>
-<p>算法的效率：$C(n) = \sum_{i=1}^{n-1}1 = n-1 \in \Theta (n)$</p>
-<p>非递归算法分析通用方案：</p>
-<ol>
-<li>决定用那些参数作为输入规模的度量</li>
-<li>找出算法的基本操作</li>
-<li>检查基本操作的执行次数是否只依赖输入规模</li>
-<li>建立一个算法基本操作执行次数的求和表达式</li>
-<li>利用求和运算的标准公式和法则来建立一个操作次数的闭合公式，或者至少确定它的增长次数</li>
-</ol>
-<p>eg.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 UniqueElements(A[0,1,...,n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 验证给定数组的元素是否全部唯一</span><br><span class="line">&#x2F;&#x2F; 输入：实数数组 A[0,1,...,n-1]</span><br><span class="line">&#x2F;&#x2F; 输出：如果唯一，返回 True，否则 False</span><br><span class="line"></span><br><span class="line">for i ⬅ 0 to n-2 do</span><br><span class="line">    for j ⬅ i+1 to n-1 do</span><br><span class="line">        if A[i] &#x3D; A[j] return False</span><br><span class="line">return True</span><br></pre></td></tr></table></figure>
-
-<p>输入规模：数组个数 n</p>
-<p>基本操作：比较运算</p>
-<p>算法的效率：$C(n) = \sum_{i=0}^{n-2} \sum_{j=i+1}^{n-1} 1 = \sum_{i=0}^{n-2} (n-i-1) = \frac{n(n-1)}{2}$</p>
-<p>该算法最坏情况：$O(n^2)$</p>
-<p>该算法最好情况：$\Omega (1)$</p>
-<p>一般情况下：需要考虑数组中各种元素出现的情况，很难使用数学表达，因此很难确定一个具体的时间表达式，但从最坏的情况来看，该算法的时间上界为：$O (n^2)$</p>
-<p><strong>结论：</strong></p>
-<p>如果一个算法在执行过程中会根据条件终止，那么该算法会存在最优效率和最差效率，这时选择的时间渐进符号为：$\Omega$ 和 $O$，否则选择符号 $\Theta$</p>
-<h1 id="递归算法效率分析"><a href="#递归算法效率分析" class="headerlink" title="递归算法效率分析"></a>递归算法效率分析</h1><p>eg.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 F(n)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 递归计算 n!</span><br><span class="line">&#x2F;&#x2F; 输入：非负整数 n</span><br><span class="line">&#x2F;&#x2F; 输出：n! 的值</span><br><span class="line"></span><br><span class="line">if n&#x3D;0 return 1</span><br><span class="line">else return F(n-1)*n</span><br></pre></td></tr></table></figure>
-
-<p>输入规模：n</p>
-<p>基本操作：乘法</p>
-<blockquote>
-<p>只有在递归调用的过程中才会多次执行基本操作</p>
-</blockquote>
-<p>递归算法很难通过递归调用确定执行次数，但是可以根据递归调用的式子获取基本操作执行次数的递推式和初始条件，通过递推式的计算，得出递归算法的时间多项式</p>
-<p>假设 M(n) 是输入规模为 n 时基本操作的执行次数，而在递归调用中的输入规模是 n-1，则递归调用过程中的基本操作执行次数可用 M(n-1) 来表示，M(n) 和 M(n-1) 之间刚好相差了 1 次乘法，即在递归调用中的乘法</p>
-<p>基本操作执行次数递推式 $\Rightarrow$ $M(n) = \left{\begin{matrix} M(n-1)+1 , ; n \geq 1 \ ;;;;;;;;;;;;;0;;;;;;;; ,; n=0 \end{matrix}\right.$</p>
-<p>$\Rightarrow$ $M(n) = M(n-1)+1$ </p>
-<p>$= [M(n-2)+1]+1 = M(n-2)+2$</p>
-<p>$……$</p>
-<p>$=[M(n-n)+1]+n-1=n$</p>
-<p>递归算法分析通用方案</p>
-<ol>
-<li>决定用哪个参数作为输入规模的度量</li>
-<li>找出算法的基本操作</li>
-<li>检査对相同规模的输入，基本操作的执行次数是否相同，如果不同，必须对最差、平均及最优效率单独研究</li>
-<li>建立一个递推关系式及相应的初始条件</li>
-<li>求解这个递归关系式，或者至少确定解的增长次数</li>
-</ol>
-]]></content>
-      <categories>
-        <category>算法分析</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>算法分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1661,6 +1533,134 @@ $$d_{1} = F \left(x_{{m1}'},\;y_{{m1}'}\right)$$
       <tags>
         <tag>学习笔记</tag>
         <tag>计算机图形学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认识算法分析</title>
+    <url>/20/04/13B/</url>
+    <content><![CDATA[<p>不写简介不是因为懒😐</p>
+<a id="more"></a>
+
+<h1 id="什么是算法？"><a href="#什么是算法？" class="headerlink" title="什么是算法？"></a>什么是算法？</h1><p>一系列解决问题的清晰指令，能够对一定规范的输入，在有限的时间内获得要求的输出</p>
+<p>算法的特点：</p>
+<p>1. 指令清晰</p>
+<p>指令：计算机中的一行代码</p>
+<p>清晰：每一条指令不应该具有二义性，即计算机在接收到这条指令时，它的理解是唯一的</p>
+<p>2. 输入规范</p>
+<p>算法要有输入，且要确定该算法的输入范围</p>
+<p>3. 有限性</p>
+<p>算法运行的时间是有限的，只要算法能够终止，它的时间就是有限的</p>
+<p>4. 输出</p>
+<p>输出是任何一个算法必须的，如果一个算法没有输出，它就没有任何意义</p>
+<p>算法描述：同一个算法有不同的表达方式</p>
+<ol>
+<li>自然语言描述</li>
+<li>伪代码描述</li>
+</ol>
+<p>伪代码对照：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/00.png" alt="00.png"></p>
+<p>算法是问题的程序化解决方案，因此它遵循一定的流程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/01.png" alt="01.png"></p>
+<h1 id="算法分析？"><a href="#算法分析？" class="headerlink" title="算法分析？"></a>算法分析？</h1><p>算法分析就是要分析算法的时间效率和空间效率</p>
+<p>时间效率也就是时间复杂度，反映的是算法运行需要的时间长度</p>
+<p>空间效率也就是空间复杂度，反映的是算法运行需要的存储空间</p>
+<p>算法分析的核心是分析算法的时间效率</p>
+<p>输入规模越大的算法，其需要的计算时间就越长，同时也与算法实现的程序设计语言、编译器以及运行算法的硬件设备都有关系</p>
+<p>对于输入规模很大的算法，其运行时间通常由算法的操作中那些最耗时的操作来确定</p>
+<p>四则运算的算法中，通常乘除运算比加减运算耗时更多</p>
+<p>基本操作：用算法中最耗时的操作被执行的次数来度量算法的时间</p>
+<p>一个算法的运行时间主要与输入规模和基本操作有关</p>
+<p>eg.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/02.png" alt="02.png"></p>
+<p>算法的时间效率对于不同的输入是不同的</p>
+<h1 id="时间渐进表示"><a href="#时间渐进表示" class="headerlink" title="时间渐进表示"></a>时间渐进表示</h1><p>时间渐进符号：$O$、$\Omega$、$\Theta$</p>
+<p>时间效率的渐进表示：</p>
+<ul>
+<li>$O$</li>
+</ul>
+<p>对于足够大的 $n$，函数 $t(n)$ 的上界由 $g(n)$ 的常数倍来确定，即：$t(n) \leq c g(n)$，$c$ 为常数，记为：$t(n) \in O (g(n))$</p>
+<p>$t(n)$：算法基本操作执行次数的时间多项式，eg. $t(n) = 3n^{2} + 4n + 5$</p>
+<p>$g(n)$：常见的效率类型，eg. $log_{n}$、$n$、$nlog_{n}$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/03.png" alt="03.png"></p>
+<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的常数倍之下</p>
+<p>说明函数 $g(n)$ 对应的效率类型是该算法的下界，即：在最坏情况下，该算法的时间效率为 $O (g(n))$</p>
+<ul>
+<li>$\Omega$</li>
+</ul>
+<p>对于足够大的 $n$，函数 $t(n)$ 的下界由 $g(n)$ 的常数倍来确定，即：$t(n) \geq c g(n)$，$c$ 为常数，记为：$t(n) \in \Omega (g(n))$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/04.png" alt="04.png"></p>
+<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的常数倍之上</p>
+<p>说明函数 $g(n)$ 对应的效率类型是该算法的上界，即：在最优情况下，该算法的时间效率为 $\Omega (g(n))$</p>
+<ul>
+<li>$\Theta$</li>
+</ul>
+<p>对于足够大的 $n$，函数 $t(n)$ 的下界和下界由 $g(n)$ 的常数倍来确定，即：$c_{2} g(n) \leq t(n) \leq c_{1} g(n)$，$c_{2}$、$c_{1}$ 为常数，记为：$t(n) \in \Theta (g(n))$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/05.png" alt="05.png"></p>
+<p>不管 $n$ 如何变化，算法时间多项式的曲线总是在函数 $g(n)$ 的两个常数倍之间</p>
+<p>说明函数 $g(n)$ 对应的效率类型是该算法的上界和下界之间，即：在典型输入下，该算法的时间效率为 $\Theta (g(n))$</p>
+<p>eg. 算法 1 的时间多项式：$t_{1}(n) = 2n^{2} + 4n + 20$，算法 2 的时间多项式：$t_{2}(n) = 10nlog_{n} + 5n + 3$，问：哪一个算法的效率更高</p>
+<p>$\because t_{1}(n) \in \Omega (n^{2}),;t_{2}(n) \in \Omega (nlog_{n})$</p>
+<p>$\therefore$ 算法 2 效率更高</p>
+<p><strong>定理：</strong></p>
+<p>如果：$t_{1}(n) \in O(g_{1}(n))$ 且 $t_{2}(n) \in O(g_{2}(n))$，则 $t_{1}(n) + t_{2}(n) \in O(max \left{ g_{1}(n),;g_{2}(n) \right} )$</p>
+<p>算法的基本效率类型：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr13B/06.png" alt="06.png"></p>
+<p>如果算法的时间效率属于 $n^3$ 以上时，在输入规模 $n$ 逐渐增大的时候，这类算法的时间消耗增速很快，因此，要尽可能将设计算法的时间效率保证在 $n^3$ 以下</p>
+<h1 id="非递归算法效率分析"><a href="#非递归算法效率分析" class="headerlink" title="非递归算法效率分析"></a>非递归算法效率分析</h1><p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 MaxElement(A[0,1,...,n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 求出给定数组中的最大元素</span><br><span class="line">&#x2F;&#x2F; 输入：实数数组 A[0,1,...,n-1]</span><br><span class="line">&#x2F;&#x2F; 输出：A 中的最大元素</span><br><span class="line"></span><br><span class="line">maxval ⬅ A[0]</span><br><span class="line">for i ⬅ 1 to n-1 do</span><br><span class="line">    if A[i] &gt; maxval</span><br><span class="line">        maxval ⬅ A[i]</span><br><span class="line">return maxval</span><br></pre></td></tr></table></figure>
+
+<p>输入规模：数组长度 n</p>
+<p>基本操作：比较运算</p>
+<p>算法的效率：$C(n) = \sum_{i=1}^{n-1}1 = n-1 \in \Theta (n)$</p>
+<p>非递归算法分析通用方案：</p>
+<ol>
+<li>决定用那些参数作为输入规模的度量</li>
+<li>找出算法的基本操作</li>
+<li>检查基本操作的执行次数是否只依赖输入规模</li>
+<li>建立一个算法基本操作执行次数的求和表达式</li>
+<li>利用求和运算的标准公式和法则来建立一个操作次数的闭合公式，或者至少确定它的增长次数</li>
+</ol>
+<p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 UniqueElements(A[0,1,...,n-1])</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 验证给定数组的元素是否全部唯一</span><br><span class="line">&#x2F;&#x2F; 输入：实数数组 A[0,1,...,n-1]</span><br><span class="line">&#x2F;&#x2F; 输出：如果唯一，返回 True，否则 False</span><br><span class="line"></span><br><span class="line">for i ⬅ 0 to n-2 do</span><br><span class="line">    for j ⬅ i+1 to n-1 do</span><br><span class="line">        if A[i] &#x3D; A[j] return False</span><br><span class="line">return True</span><br></pre></td></tr></table></figure>
+
+<p>输入规模：数组个数 n</p>
+<p>基本操作：比较运算</p>
+<p>算法的效率：$C(n) = \sum_{i=0}^{n-2} \sum_{j=i+1}^{n-1} 1 = \sum_{i=0}^{n-2} (n-i-1) = \frac{n(n-1)}{2}$</p>
+<p>该算法最坏情况：$O(n^2)$</p>
+<p>该算法最好情况：$\Omega (1)$</p>
+<p>一般情况下：需要考虑数组中各种元素出现的情况，很难使用数学表达，因此很难确定一个具体的时间表达式，但从最坏的情况来看，该算法的时间上界为：$O (n^2)$</p>
+<p><strong>结论：</strong></p>
+<p>如果一个算法在执行过程中会根据条件终止，那么该算法会存在最优效率和最差效率，这时选择的时间渐进符号为：$\Omega$ 和 $O$，否则选择符号 $\Theta$</p>
+<h1 id="递归算法效率分析"><a href="#递归算法效率分析" class="headerlink" title="递归算法效率分析"></a>递归算法效率分析</h1><p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">算法 F(n)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 递归计算 n!</span><br><span class="line">&#x2F;&#x2F; 输入：非负整数 n</span><br><span class="line">&#x2F;&#x2F; 输出：n! 的值</span><br><span class="line"></span><br><span class="line">if n&#x3D;0 return 1</span><br><span class="line">else return F(n-1)*n</span><br></pre></td></tr></table></figure>
+
+<p>输入规模：n</p>
+<p>基本操作：乘法</p>
+<blockquote>
+<p>只有在递归调用的过程中才会多次执行基本操作</p>
+</blockquote>
+<p>递归算法很难通过递归调用确定执行次数，但是可以根据递归调用的式子获取基本操作执行次数的递推式和初始条件，通过递推式的计算，得出递归算法的时间多项式</p>
+<p>假设 M(n) 是输入规模为 n 时基本操作的执行次数，而在递归调用中的输入规模是 n-1，则递归调用过程中的基本操作执行次数可用 M(n-1) 来表示，M(n) 和 M(n-1) 之间刚好相差了 1 次乘法，即在递归调用中的乘法</p>
+<p>基本操作执行次数递推式 $\Rightarrow$ $M(n) = \left{\begin{matrix} M(n-1)+1 , ; n \geq 1 \ ;;;;;;;;;;;;;0;;;;;;;; ,; n=0 \end{matrix}\right.$</p>
+<p>$\Rightarrow$ $M(n) = M(n-1)+1$ </p>
+<p>$= [M(n-2)+1]+1 = M(n-2)+2$</p>
+<p>$……$</p>
+<p>$=[M(n-n)+1]+n-1=n$</p>
+<p>递归算法分析通用方案</p>
+<ol>
+<li>决定用哪个参数作为输入规模的度量</li>
+<li>找出算法的基本操作</li>
+<li>检査对相同规模的输入，基本操作的执行次数是否相同，如果不同，必须对最差、平均及最优效率单独研究</li>
+<li>建立一个递推关系式及相应的初始条件</li>
+<li>求解这个递归关系式，或者至少确定解的增长次数</li>
+</ol>
+]]></content>
+      <categories>
+        <category>算法分析</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>算法分析</tag>
       </tags>
   </entry>
   <entry>

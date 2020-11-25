@@ -56,34 +56,6 @@
       </tags>
   </entry>
   <entry>
-    <title>#943 顺序表插入操作的实现</title>
-    <url>/swustoj/943/</url>
-    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为n的顺序表，在指定的数据元素item之前插入数据元素data。如果指定的数据元素item不存在，则将data插入到顺序表的尾端。（数据类型为整型）</p>
-<a id="more"></a>
-
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
-<p>第一行为顺序表的长度n；<br>第二行为顺序表中的数据元素；<br>第三行为指定的数据元素item；<br>第四行为要插入的数据元素data；</p>
-</blockquote>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
-<p>输出结果为顺序表中的数据元素。</p>
-</blockquote>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
-<p>10<br>10 20 30 40 50 60 70 80 90 100<br>50<br>55</p>
-</blockquote>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
-<p>10 20 30 40 55 50 60 70 80 90 100</p>
-</blockquote>
-<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;list&gt; // 使用顺序表</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt; // 使用函数</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; List;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">1000</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; arr[i];</span><br><span class="line">		List.push_back(arr[i]); <span class="comment">// 将数组元素放入顺序表</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">	<span class="keyword">int</span> date;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; date;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;::iterator iter; <span class="comment">// 迭代器</span></span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; *iter!=m &amp;&amp; iter!=List.end(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		iter++;</span><br><span class="line">	&#125;</span><br><span class="line">	List.insert(iter,date); <span class="comment">// 放入date在List后</span></span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; iter != List.end(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SWUSTOJ 题解系列</category>
-      </categories>
-      <tags>
-        <tag>SWUST</tag>
-        <tag>OJ</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>#952 单链表的插入操作的实现</title>
     <url>/swustoj/952/</url>
     <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为 n 的单链表，在第 i 个结点之前插入数据元素 data。</p>
@@ -102,6 +74,34 @@
 <p>1 2 6 3 4 5</p>
 </blockquote>
 <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; L;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];</span><br><span class="line">        L.push_back(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">int</span> date;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; date;</span><br><span class="line">    <span class="keyword">if</span>(m &gt; L.size())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;error!&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;::iterator iter;</span><br><span class="line">    iter = L.begin();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        iter++;</span><br><span class="line">    &#125;</span><br><span class="line">    L.insert(iter, date);</span><br><span class="line">    iter = L.begin();</span><br><span class="line">    <span class="keyword">for</span>(iter = L.begin(); iter != L.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SWUSTOJ 题解系列</category>
+      </categories>
+      <tags>
+        <tag>SWUST</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>#943 顺序表插入操作的实现</title>
+    <url>/swustoj/943/</url>
+    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为n的顺序表，在指定的数据元素item之前插入数据元素data。如果指定的数据元素item不存在，则将data插入到顺序表的尾端。（数据类型为整型）</p>
+<a id="more"></a>
+
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
+<p>第一行为顺序表的长度n；<br>第二行为顺序表中的数据元素；<br>第三行为指定的数据元素item；<br>第四行为要插入的数据元素data；</p>
+</blockquote>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
+<p>输出结果为顺序表中的数据元素。</p>
+</blockquote>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
+<p>10<br>10 20 30 40 50 60 70 80 90 100<br>50<br>55</p>
+</blockquote>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
+<p>10 20 30 40 55 50 60 70 80 90 100</p>
+</blockquote>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;list&gt; // 使用顺序表</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt; // 使用函数</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; List;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">1000</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; arr[i];</span><br><span class="line">		List.push_back(arr[i]); <span class="comment">// 将数组元素放入顺序表</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">	<span class="keyword">int</span> date;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; date;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;::iterator iter; <span class="comment">// 迭代器</span></span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; *iter!=m &amp;&amp; iter!=List.end(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		iter++;</span><br><span class="line">	&#125;</span><br><span class="line">	List.insert(iter,date); <span class="comment">// 放入date在List后</span></span><br><span class="line">	iter = List.begin();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; iter != List.end(); iter++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>SWUSTOJ 题解系列</category>
@@ -196,34 +196,6 @@
       </tags>
   </entry>
   <entry>
-    <title>#956 约瑟夫问题的实现</title>
-    <url>/swustoj/956/</url>
-    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>n个人围成一个圈，每个人分别标注为1、2、…、n，要求从1号从1开始报数，报到k的人出圈，接着下一个人又从1开始报数，如此循环，直到只剩最后一个人时，该人即为胜利者。例如当n=10,k=4时，依次出列的人分别为4、8、2、7、3、10，9、1、6、5，则5号位置的人为胜利者。给定n个人，请你编程计算出最后胜利者标号数。（要求用单循环链表完成。）</p>
-<a id="more"></a>
-
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
-<p>第一行为人数n;<br>第二行为报数k。</p>
-</blockquote>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
-<p>输出最后胜利者的标号数。</p>
-</blockquote>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
-<p>10<br>4</p>
-</blockquote>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
-<p>5</p>
-</blockquote>
-<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">	<span class="keyword">int</span> n, x;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Q.push(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(Q.size() == <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=x; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i == x)</span><br><span class="line">			&#123;</span><br><span class="line">				Q.pop();</span><br><span class="line">				i = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(Q.size() == <span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">int</span> temp = Q.front();</span><br><span class="line">			Q.pop();</span><br><span class="line">			Q.push(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; Q.front();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>SWUSTOJ 题解系列</category>
-      </categories>
-      <tags>
-        <tag>SWUST</tag>
-        <tag>OJ</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>#957 逆置单链表</title>
     <url>/swustoj/957/</url>
     <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>建立长度为 n 的单链表，然后将其数据元素逆置，即第1个元素变为最后一个元素，第2个元素变为倒数第2个元素，以此类推，最后一个元素变为第1个元素。（处理的数据类型为字符型。必须使用链表完成。）</p>
@@ -242,6 +214,34 @@
 <p>J I H G F E D C B A</p>
 </blockquote>
 <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt; List;</span><br><span class="line">    <span class="keyword">int</span> m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];</span><br><span class="line">        List.push_back(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">char</span>&gt;::iterator iter;</span><br><span class="line">    reverse(List.begin(), List.end());</span><br><span class="line">    <span class="keyword">for</span>(iter = List.begin(); iter != List.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SWUSTOJ 题解系列</category>
+      </categories>
+      <tags>
+        <tag>SWUST</tag>
+        <tag>OJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>#956 约瑟夫问题的实现</title>
+    <url>/swustoj/956/</url>
+    <content><![CDATA[<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>n个人围成一个圈，每个人分别标注为1、2、…、n，要求从1号从1开始报数，报到k的人出圈，接着下一个人又从1开始报数，如此循环，直到只剩最后一个人时，该人即为胜利者。例如当n=10,k=4时，依次出列的人分别为4、8、2、7、3、10，9、1、6、5，则5号位置的人为胜利者。给定n个人，请你编程计算出最后胜利者标号数。（要求用单循环链表完成。）</p>
+<a id="more"></a>
+
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
+<p>第一行为人数n;<br>第二行为报数k。</p>
+</blockquote>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
+<p>输出最后胜利者的标号数。</p>
+</blockquote>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><blockquote>
+<p>10<br>4</p>
+</blockquote>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><blockquote>
+<p>5</p>
+</blockquote>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">	<span class="keyword">int</span> n, x;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Q.push(i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(Q.size() == <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=x; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i == x)</span><br><span class="line">			&#123;</span><br><span class="line">				Q.pop();</span><br><span class="line">				i = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(Q.size() == <span class="number">1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">int</span> temp = Q.front();</span><br><span class="line">			Q.pop();</span><br><span class="line">			Q.push(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; Q.front();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>SWUSTOJ 题解系列</category>
@@ -431,6 +431,70 @@
       </tags>
   </entry>
   <entry>
+    <title>Java 运算符【Java 学习笔记 06】</title>
+    <url>/20/03/20F/</url>
+    <content><![CDATA[<p>所有的程序开发就是一种数字处理游戏，对于数字的处理一定会有所谓的操作模式，而这些操作模式就称为运算符，在程序开发中，会提供大量的基础运算符，这些运算符都有自己各自的优先顺序，不用记住，<code>()</code> 优先级最高，合理使用 <code>()</code> 就可以了</p>
+<a id="more"></a>
+
+<h1 id="数学运算符"><a href="#数学运算符" class="headerlink" title="数学运算符"></a>数学运算符</h1><p> 在 Java 中数学运算都提供了标准的支持，包括四则运算等等，在进行变量计算的时候，编程语言一般都会提供简化的运算符支持</p>
+<p>eg. num = num + 1《=》num += 1</p>
+<p><code>++</code> 、<code>--</code> 的两类运算方法：</p>
+<ul>
+<li>++num、–num：先进行 num 的自增或者自减，在进行数字计算</li>
+<li>num++、num–：先进行 num 的数字计算，再进行自增或者自减</li>
+</ul>
+<p>最好不使用以上操作，怎么简单怎么写</p>
+<h1 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h1><p> 关系运算的主要特征就是进行大小的比较处理，包括：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">// 大于</span></span><br><span class="line">&lt; <span class="comment">// 小于</span></span><br><span class="line">&gt;= <span class="comment">// 大于等于</span></span><br><span class="line">&lt;= <span class="comment">// 小于等于</span></span><br><span class="line">!= <span class="comment">// 不等于</span></span><br><span class="line">== <span class="comment">// 等于</span></span><br></pre></td></tr></table></figure>
+
+<p>所有的关系运算返回的判断结果都是布尔类型数据，进行关系判断的时候特别注意等于的判断，使用 <code>==</code>，进行关系运算的时候可以针对所有的基本数据类型，也可以使用字符来进行关系运算，因为数据类型之间提供转型支持，所以再进行字符的判断的时候，字符会自动转为 int 而后进行数字的比较</p>
+<h1 id="三目赋值运算符"><a href="#三目赋值运算符" class="headerlink" title="三目赋值运算符"></a>三目赋值运算符</h1><p>在进行程序开发的时候三目运算符使用得很多，而且合理使用三目运算可以避免大范围程序编写，三目是一种所谓的赋值运算的处理，它是需要设置一个逻辑关系的判断之后才可以进行的赋值操作，基本语法：</p>
+<p><code>关系运算 ? 关系满足时的内容 : 关系不满足时的内容</code></p>
+<p>eg. 判断两个数字的大小，输出最大数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> max = a &gt; b ? a : b;</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序开发的核心要点：尽可能精简代码</p>
+<p>三目运算本身也可以进行嵌套处理，也就是说在赋值语句的位置上可以进一步编写三目运算，但是程序可读性会降低，根据实际情况决定是否嵌套</p>
+<p>eg. 三目运算的嵌套</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>, c = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">int</span> max = a &gt; b ? (a &gt; c ? a : c) : (b &gt; c) ? b : c;</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h1><p>位运算是指可以直接进行二进制数据的计算处理，主要有：&amp;（与）、|（或）、^（异或）、~（反码）、移位运算</p>
+<p>想理解位操作，一定要清楚十进制与二进制之间转换的逻辑：数字除以 2 取余数，eg. 13 ➡ 1101，注意：Java 中的整型是 32 位，所以：13 ➡ 00000000 00000000 00000000 00001101</p>
+<p>eg. 与操作</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">13</span>, b = <span class="number">7</span>;</span><br><span class="line">        System.out.println(a &amp; b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运算过程：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">13</span> 的二进制 ➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00001101</span></span><br><span class="line"></span><br><span class="line"><span class="number">7</span> 的二进制  ➡  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000111</span></span><br><span class="line"></span><br><span class="line">&amp; 的结果    ➡  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000101</span> ➡ <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>在进行位运算的时候还可以进行移位运算，eg. 求 2 的 3 次方</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        System.out.println(a &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运算过程：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span> 的二进制： ➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000010</span></span><br><span class="line">向左移 <span class="number">2</span> 位：➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00001000</span> ➡ <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>&amp; 和 &amp;&amp;、| 和 || 的区别：</p>
+<ul>
+<li>&amp; 和 | 是两个可以进行位运算与逻辑运算的运算符<ul>
+<li>在进行逻辑运算的时候所有的判断条件都要执行 </li>
+<li>在进行位运算的时候只是对当前数据进行与、或处理</li>
+</ul>
+</li>
+<li>在逻辑运算上还可以使用 &amp;&amp;、||<ul>
+<li>&amp;&amp;：在进行若干个条件判断的时候，如果前面的条件返回了 false，后续所有的条件都不再判断，最终的结果就是 false</li>
+<li>||：在进行若干个条件判断的时候，如果前面的条件返回了 true，后续所有的条件都不再判断，最终的结果就是 true</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java 学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java数据类型划分【Java 学习笔记 05】</title>
     <url>/20/03/20E/</url>
     <content><![CDATA[<p>程序是一套数字处理的游戏框架，在程序开发的过程之中，最终目的就是对一些数据进行处理，就必须提供各种类型的数据定义</p>
@@ -504,70 +568,6 @@
 <li>‘《=》<code>\&#39;</code></li>
 <li>换行《=》<code>\n</code></li>
 <li>\《=》<code>\\</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java 学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 运算符【Java 学习笔记 06】</title>
-    <url>/20/03/20F/</url>
-    <content><![CDATA[<p>所有的程序开发就是一种数字处理游戏，对于数字的处理一定会有所谓的操作模式，而这些操作模式就称为运算符，在程序开发中，会提供大量的基础运算符，这些运算符都有自己各自的优先顺序，不用记住，<code>()</code> 优先级最高，合理使用 <code>()</code> 就可以了</p>
-<a id="more"></a>
-
-<h1 id="数学运算符"><a href="#数学运算符" class="headerlink" title="数学运算符"></a>数学运算符</h1><p> 在 Java 中数学运算都提供了标准的支持，包括四则运算等等，在进行变量计算的时候，编程语言一般都会提供简化的运算符支持</p>
-<p>eg. num = num + 1《=》num += 1</p>
-<p><code>++</code> 、<code>--</code> 的两类运算方法：</p>
-<ul>
-<li>++num、–num：先进行 num 的自增或者自减，在进行数字计算</li>
-<li>num++、num–：先进行 num 的数字计算，再进行自增或者自减</li>
-</ul>
-<p>最好不使用以上操作，怎么简单怎么写</p>
-<h1 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h1><p> 关系运算的主要特征就是进行大小的比较处理，包括：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">// 大于</span></span><br><span class="line">&lt; <span class="comment">// 小于</span></span><br><span class="line">&gt;= <span class="comment">// 大于等于</span></span><br><span class="line">&lt;= <span class="comment">// 小于等于</span></span><br><span class="line">!= <span class="comment">// 不等于</span></span><br><span class="line">== <span class="comment">// 等于</span></span><br></pre></td></tr></table></figure>
-
-<p>所有的关系运算返回的判断结果都是布尔类型数据，进行关系判断的时候特别注意等于的判断，使用 <code>==</code>，进行关系运算的时候可以针对所有的基本数据类型，也可以使用字符来进行关系运算，因为数据类型之间提供转型支持，所以再进行字符的判断的时候，字符会自动转为 int 而后进行数字的比较</p>
-<h1 id="三目赋值运算符"><a href="#三目赋值运算符" class="headerlink" title="三目赋值运算符"></a>三目赋值运算符</h1><p>在进行程序开发的时候三目运算符使用得很多，而且合理使用三目运算可以避免大范围程序编写，三目是一种所谓的赋值运算的处理，它是需要设置一个逻辑关系的判断之后才可以进行的赋值操作，基本语法：</p>
-<p><code>关系运算 ? 关系满足时的内容 : 关系不满足时的内容</code></p>
-<p>eg. 判断两个数字的大小，输出最大数</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> max = a &gt; b ? a : b;</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序开发的核心要点：尽可能精简代码</p>
-<p>三目运算本身也可以进行嵌套处理，也就是说在赋值语句的位置上可以进一步编写三目运算，但是程序可读性会降低，根据实际情况决定是否嵌套</p>
-<p>eg. 三目运算的嵌套</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>, c = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">int</span> max = a &gt; b ? (a &gt; c ? a : c) : (b &gt; c) ? b : c;</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h1><p>位运算是指可以直接进行二进制数据的计算处理，主要有：&amp;（与）、|（或）、^（异或）、~（反码）、移位运算</p>
-<p>想理解位操作，一定要清楚十进制与二进制之间转换的逻辑：数字除以 2 取余数，eg. 13 ➡ 1101，注意：Java 中的整型是 32 位，所以：13 ➡ 00000000 00000000 00000000 00001101</p>
-<p>eg. 与操作</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">13</span>, b = <span class="number">7</span>;</span><br><span class="line">        System.out.println(a &amp; b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运算过程：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">13</span> 的二进制 ➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00001101</span></span><br><span class="line"></span><br><span class="line"><span class="number">7</span> 的二进制  ➡  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000111</span></span><br><span class="line"></span><br><span class="line">&amp; 的结果    ➡  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000101</span> ➡ <span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>在进行位运算的时候还可以进行移位运算，eg. 求 2 的 3 次方</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        System.out.println(a &lt;&lt; <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运算过程：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span> 的二进制： ➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000010</span></span><br><span class="line">向左移 <span class="number">2</span> 位：➡ <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00001000</span> ➡ <span class="number">8</span></span><br></pre></td></tr></table></figure>
-
-<p>&amp; 和 &amp;&amp;、| 和 || 的区别：</p>
-<ul>
-<li>&amp; 和 | 是两个可以进行位运算与逻辑运算的运算符<ul>
-<li>在进行逻辑运算的时候所有的判断条件都要执行 </li>
-<li>在进行位运算的时候只是对当前数据进行与、或处理</li>
-</ul>
-</li>
-<li>在逻辑运算上还可以使用 &amp;&amp;、||<ul>
-<li>&amp;&amp;：在进行若干个条件判断的时候，如果前面的条件返回了 false，后续所有的条件都不再判断，最终的结果就是 false</li>
-<li>||：在进行若干个条件判断的时候，如果前面的条件返回了 true，后续所有的条件都不再判断，最终的结果就是 true</li>
-</ul>
-</li>
 </ul>
 ]]></content>
       <categories>
@@ -909,6 +909,70 @@
       </tags>
   </entry>
   <entry>
+    <title>我是如何提升我的网站访问速度的？</title>
+    <url>/20/04/07B/</url>
+    <content><![CDATA[<p>这是提升前后的网站响应速度对比：</p>
+<ul>
+<li>提升之前👇</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/00.png" alt="00.png"></p>
+<ul>
+<li>提升之后👇</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/01.png" alt="01.png"></p>
+<p>绿油油的真不错！✔</p>
+<a id="more"></a>
+
+<h1 id="GitHub-Coding"><a href="#GitHub-Coding" class="headerlink" title="GitHub + Coding"></a>GitHub + Coding</h1><p>最开始我的网站只在 GitHub 托管，由于 GitHub 服务器在海外，从大天朝访问总是时断时续的，然后我看到了 <a href="https://www.itrhx.com/">TRHX</a> 的 Hexo 系列中讲如何实现 GitHub + Coding 双线部署的文章</p>
+<blockquote>
+<p>建议小白们熟读并背诵 TRHX 的 Hexo 系列[滑稽]</p>
+</blockquote>
+<p>然后我就在 Coding 上也部署了我的博客，具体操作👉<a href="https://blog.csdn.net/qq_36759224/article/details/100879609">传送门</a></p>
+<p>这里我只补充一点点，由于 Coding 被腾讯收购，后来的 Coding 就和腾讯云开发者平台合并了，所以不管你是从 <code>https://coding.net/</code> 还是 <code>https://dev.tencent.com/</code> 登陆注册都是一样的会进入 Coding</p>
+<p>还有就是关于仓库开启 Pages 服务，很多人找不到在哪部署静态网站，因为 Coding 新建仓库只默认开启如图的功能，其他功能开关需要自己打开</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/02.png" alt="02.png"></p>
+<ul>
+<li>点击左下角<strong>项目设置</strong></li>
+<li>点击右侧<strong>功能开关</strong></li>
+<li>开启<strong>构建与部署</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/03.png" alt="03.png"></p>
+<p>然后回到你的仓库，在左侧构建与部署里点击静态网站，就可以开始部署 Pages 服务了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/04.png" alt="04.png"></p>
+<p>当我完成一顿操作之后，部署成功了，但是我的站点访问更慢了！！！🤢</p>
+<blockquote>
+<p>Tips：Coding 的服务器在新加坡</p>
+</blockquote>
+<h1 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h1><p>中文版 GitHub，服务器在国内，之前也在上面托管过代码，但是一直没想到它也有 Pages 服务</p>
+<p>以下是我在码云上部署站点的过程</p>
+<p>码云上即使你的仓库与用户名不同也可以开启 Pages 服务，但是如果不使用与用户名相同的仓库，部署 Pages 服务之后你的首页访问地址将带有二级目录，这会影响之后的域名解析</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/05.png" alt="05.png"></p>
+<p>步骤：</p>
+<h2 id="1-创建一个与用户名同名的仓库"><a href="#1-创建一个与用户名同名的仓库" class="headerlink" title="1. 创建一个与用户名同名的仓库"></a>1. 创建一个与用户名同名的仓库</h2><p>略</p>
+<h2 id="2-复制仓库的-HTTPS-地址"><a href="#2-复制仓库的-HTTPS-地址" class="headerlink" title="2. 复制仓库的 HTTPS 地址"></a>2. 复制仓库的 HTTPS 地址</h2><p>当然使用 SSH 也是可以的，个人推荐码云可以使用 HTTPS，因为速度够快，使用也更方便</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/06.png" alt="06.png"></p>
+<h2 id="3-在站点目录里配置仓库地址"><a href="#3-在站点目录里配置仓库地址" class="headerlink" title="3. 在站点目录里配置仓库地址"></a>3. 在站点目录里配置仓库地址</h2><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/07.png" alt="07.png"></p>
+<h2 id="4-推送站点代码"><a href="#4-推送站点代码" class="headerlink" title="4. 推送站点代码"></a>4. 推送站点代码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>当 Git 开始向码云推送代码时，系统会弹出窗口需要你输入你的码云用户名 + 密码，这就完成了本地与码云的连接</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/11.png" alt="11.png"></p>
+<h2 id="5-开启-Pages-服务"><a href="#5-开启-Pages-服务" class="headerlink" title="5. 开启 Pages 服务"></a>5. 开启 Pages 服务</h2><p>点击仓库右上角<strong>服务</strong><br>点击<strong>Gitee Pages</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/08.png" alt="08.png"></p>
+<p>这里一切默认即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/09.png" alt="09.png"></p>
+<h2 id="6-域名解析"><a href="#6-域名解析" class="headerlink" title="6. 域名解析"></a>6. 域名解析</h2><p>略</p>
+<h1 id="最后优化"><a href="#最后优化" class="headerlink" title="最后优化"></a>最后优化</h1><p>又是一顿操作下来，我已经将我的站点同时部署在 GitHub + Coding + Gitee 上了，然后测试发现国内绝大部分地区访问我的站点时解析的都是码云的 IP 地址，所以码云的访问速度完胜</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/10.PNG" alt="10.png"></p>
+<p>最后我放弃了继续使用 Coding，而 GitHub 也只作为站点备份，所以我在控制台中停掉了 GitHub + Coding 的解析</p>
+]]></content>
+      <categories>
+        <category>博客纪要</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机图形学概论</title>
     <url>/20/04/07A/</url>
     <content><![CDATA[<blockquote>
@@ -1036,70 +1100,6 @@
       <tags>
         <tag>学习笔记</tag>
         <tag>计算机图形学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我是如何提升我的网站访问速度的？</title>
-    <url>/20/04/07B/</url>
-    <content><![CDATA[<p>这是提升前后的网站响应速度对比：</p>
-<ul>
-<li>提升之前👇</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/00.png" alt="00.png"></p>
-<ul>
-<li>提升之后👇</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/01.png" alt="01.png"></p>
-<p>绿油油的真不错！✔</p>
-<a id="more"></a>
-
-<h1 id="GitHub-Coding"><a href="#GitHub-Coding" class="headerlink" title="GitHub + Coding"></a>GitHub + Coding</h1><p>最开始我的网站只在 GitHub 托管，由于 GitHub 服务器在海外，从大天朝访问总是时断时续的，然后我看到了 <a href="https://www.itrhx.com/">TRHX</a> 的 Hexo 系列中讲如何实现 GitHub + Coding 双线部署的文章</p>
-<blockquote>
-<p>建议小白们熟读并背诵 TRHX 的 Hexo 系列[滑稽]</p>
-</blockquote>
-<p>然后我就在 Coding 上也部署了我的博客，具体操作👉<a href="https://blog.csdn.net/qq_36759224/article/details/100879609">传送门</a></p>
-<p>这里我只补充一点点，由于 Coding 被腾讯收购，后来的 Coding 就和腾讯云开发者平台合并了，所以不管你是从 <code>https://coding.net/</code> 还是 <code>https://dev.tencent.com/</code> 登陆注册都是一样的会进入 Coding</p>
-<p>还有就是关于仓库开启 Pages 服务，很多人找不到在哪部署静态网站，因为 Coding 新建仓库只默认开启如图的功能，其他功能开关需要自己打开</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/02.png" alt="02.png"></p>
-<ul>
-<li>点击左下角<strong>项目设置</strong></li>
-<li>点击右侧<strong>功能开关</strong></li>
-<li>开启<strong>构建与部署</strong></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/03.png" alt="03.png"></p>
-<p>然后回到你的仓库，在左侧构建与部署里点击静态网站，就可以开始部署 Pages 服务了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting/TUFZ-Img/article/2020/04/20Apr07B/04.png" alt="04.png"></p>
-<p>当我完成一顿操作之后，部署成功了，但是我的站点访问更慢了！！！🤢</p>
-<blockquote>
-<p>Tips：Coding 的服务器在新加坡</p>
-</blockquote>
-<h1 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h1><p>中文版 GitHub，服务器在国内，之前也在上面托管过代码，但是一直没想到它也有 Pages 服务</p>
-<p>以下是我在码云上部署站点的过程</p>
-<p>码云上即使你的仓库与用户名不同也可以开启 Pages 服务，但是如果不使用与用户名相同的仓库，部署 Pages 服务之后你的首页访问地址将带有二级目录，这会影响之后的域名解析</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/05.png" alt="05.png"></p>
-<p>步骤：</p>
-<h2 id="1-创建一个与用户名同名的仓库"><a href="#1-创建一个与用户名同名的仓库" class="headerlink" title="1. 创建一个与用户名同名的仓库"></a>1. 创建一个与用户名同名的仓库</h2><p>略</p>
-<h2 id="2-复制仓库的-HTTPS-地址"><a href="#2-复制仓库的-HTTPS-地址" class="headerlink" title="2. 复制仓库的 HTTPS 地址"></a>2. 复制仓库的 HTTPS 地址</h2><p>当然使用 SSH 也是可以的，个人推荐码云可以使用 HTTPS，因为速度够快，使用也更方便</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/06.png" alt="06.png"></p>
-<h2 id="3-在站点目录里配置仓库地址"><a href="#3-在站点目录里配置仓库地址" class="headerlink" title="3. 在站点目录里配置仓库地址"></a>3. 在站点目录里配置仓库地址</h2><p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/07.png" alt="07.png"></p>
-<h2 id="4-推送站点代码"><a href="#4-推送站点代码" class="headerlink" title="4. 推送站点代码"></a>4. 推送站点代码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p>当 Git 开始向码云推送代码时，系统会弹出窗口需要你输入你的码云用户名 + 密码，这就完成了本地与码云的连接</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/11.png" alt="11.png"></p>
-<h2 id="5-开启-Pages-服务"><a href="#5-开启-Pages-服务" class="headerlink" title="5. 开启 Pages 服务"></a>5. 开启 Pages 服务</h2><p>点击仓库右上角<strong>服务</strong><br>点击<strong>Gitee Pages</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/08.png" alt="08.png"></p>
-<p>这里一切默认即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/09.png" alt="09.png"></p>
-<h2 id="6-域名解析"><a href="#6-域名解析" class="headerlink" title="6. 域名解析"></a>6. 域名解析</h2><p>略</p>
-<h1 id="最后优化"><a href="#最后优化" class="headerlink" title="最后优化"></a>最后优化</h1><p>又是一顿操作下来，我已经将我的站点同时部署在 GitHub + Coding + Gitee 上了，然后测试发现国内绝大部分地区访问我的站点时解析的都是码云的 IP 地址，所以码云的访问速度完胜</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr07B/10.PNG" alt="10.png"></p>
-<p>最后我放弃了继续使用 Coding，而 GitHub 也只作为站点备份，所以我在控制台中停掉了 GitHub + Coding 的解析</p>
-]]></content>
-      <categories>
-        <category>博客纪要</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1335,35 +1335,6 @@ $$d_{1} = F \left(x_{{m1}'},\;y_{{m1}'}\right)$$
       </tags>
   </entry>
   <entry>
-    <title>博客错误日志</title>
-    <url>/20/04/08B/</url>
-    <content><![CDATA[<p>没有简介😮</p>
-<a id="more"></a>
-
-<h1 id="1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误"><a href="#1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误" class="headerlink" title="1. Hexo 对 和` 括起来的内容将被解析，这可能会引发错误"></a>1. Hexo 对 {{}} 的解析
-
-> Unhandled rejection Nunjucks Error
-
-Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的内容将被解析，这可能会引发错误</h1><p>比如我使用 LaTeX 写一个字符 $A_{{c}'}$ ==&gt; <code>$A_{{c}'}$</code> 然后 <code>hexo g</code> 出现报错：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/00.png" alt="00.png"></p>
-<p>它提示我的第五行，也就是刚刚的字符出错了</p>
-<p><strong>如何解决：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 &#123;% raw %&#125; &#123;% endraw %&#125; 将你不希望使用 Nunjucks 解析的内容括起来</span><br><span class="line"></span><br><span class="line">注意：&#123;% raw %&#125; &#123;% endraw %&#125; 在代码块中不会被解析，也就起不了作用，但是代码块中的 &#123;&#123;&#125;&#125; 本身也是不会被解析的</span><br></pre></td></tr></table></figure>
-
-<p>eg.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">$A_&#123;&#123;c&#125;&#39;&#125;$</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后看看我这部分文字是怎么写的你可能就更清楚了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/01.png" alt="01.png"></p>
-]]></content>
-      <categories>
-        <category>博客纪要</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【分享】阿里巴巴 Java 开发手册</title>
     <url>/20/04/09A/</url>
     <content><![CDATA[<table>
@@ -1393,6 +1364,35 @@ Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的�
       <tags>
         <tag>Java</tag>
         <tag>编码规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客错误日志</title>
+    <url>/20/04/08B/</url>
+    <content><![CDATA[<p>没有简介😮</p>
+<a id="more"></a>
+
+<h1 id="1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误"><a href="#1-Hexo-对-和-括起来的内容将被解析，这可能会引发错误" class="headerlink" title="1. Hexo 对 和` 括起来的内容将被解析，这可能会引发错误"></a>1. Hexo 对 {{}} 的解析
+
+> Unhandled rejection Nunjucks Error
+
+Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的内容将被解析，这可能会引发错误</h1><p>比如我使用 LaTeX 写一个字符 $A_{{c}'}$ ==&gt; <code>$A_{{c}'}$</code> 然后 <code>hexo g</code> 出现报错：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/00.png" alt="00.png"></p>
+<p>它提示我的第五行，也就是刚刚的字符出错了</p>
+<p><strong>如何解决：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">使用 &#123;% raw %&#125; &#123;% endraw %&#125; 将你不希望使用 Nunjucks 解析的内容括起来</span><br><span class="line"></span><br><span class="line">注意：&#123;% raw %&#125; &#123;% endraw %&#125; 在代码块中不会被解析，也就起不了作用，但是代码块中的 &#123;&#123;&#125;&#125; 本身也是不会被解析的</span><br></pre></td></tr></table></figure>
+
+<p>eg.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">$A_&#123;&#123;c&#125;&#39;&#125;$</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后看看我这部分文字是怎么写的你可能就更清楚了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TUFZ/ImgHosting//TUFZ-Img/article/2020/04/20Apr08B/01.png" alt="01.png"></p>
+]]></content>
+      <categories>
+        <category>博客纪要</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -2027,42 +2027,6 @@ Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的�
       </tags>
   </entry>
   <entry>
-    <title>0.print()函数</title>
-    <url>/20/09/28A/</url>
-    <content><![CDATA[<p>Python 基础语法系列开“🕳”。</p>
-<a id="more"></a>
-
-<h1 id="print"><a href="#print" class="headerlink" title="print()"></a>print()</h1><p>Python 的语言逻辑已经高度接近人类语言。</p>
-<p>Python 程序的执行过程大致如下：</p>
-<p>eg. </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&#x27;see what see!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ol start="0">
-<li>我们使用 Python 向计算机发出指令；</li>
-<li>Python 解释器将代码编译成计算机能够理解的机器语言；</li>
-<li>计算机执行相应指令；</li>
-<li>输出指令执行后的结果。</li>
-</ol>
-<p>注意 <code>print(1 + 1)</code> 与 <code>print(&#39;see what see!&#39;)</code> 的区别：</p>
-<p>计算机可以很容易地读懂数学运算，因为数学运算是非常标准的，所以可以直接输入运算式子；但是对于文本信息，计算机不能对其进行运算，所以需要一个<strong>引号</strong>告诉计算机：不用运算，直接输出。</p>
-<h1 id="三引号"><a href="#三引号" class="headerlink" title="三引号"></a>三引号</h1><p>在 <code>print()</code> 中使用三引号可以让文本换行打印。</p>
-<p>eg.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">从明天起，做一个幸福的人</span></span><br><span class="line"><span class="string">喂马，劈柴，周游世界</span></span><br><span class="line"><span class="string">从明天起，关心粮食和蔬菜</span></span><br><span class="line"><span class="string">我有一所房子，面朝大海，春暖花开</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<blockquote>
-<p>从明天起，做一个幸福的人<br>喂马，劈柴，周游世界<br>从明天起，关心粮食和蔬菜<br>我有一所房子，面朝大海，春暖花开</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Python 自学笔记</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>基础语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1.input()函数与变量</title>
     <url>/20/09/28B/</url>
     <content><![CDATA[<p>学习整数和字符串这两种数据类型、<code>input()</code> 函数和注释的使用。</p>
@@ -2111,6 +2075,42 @@ Hexo 使用 Nunjucks 渲染文章，被 `{{}}<code>和</code>{%%}` 括起来的�
 <p><strong>注意</strong>：input() 函数会把用户输入的内容以<strong>字符串</strong>的数据类型保存。</p>
 <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>Python 的注释符号是 <code>#</code>，计算机运行代码时会自动跳过 # 之后的内容，合理地使用注释可以帮助我们更好地理解代码。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 学习 + 的用法</span></span><br><span class="line">a = input(<span class="string">&#x27;你有几块钱？&#x27;</span>)</span><br><span class="line">print(<span class="string">&#x27;我有&#x27;</span> + a + <span class="string">&#x27;块钱！&#x27;</span>)</span><br><span class="line"><span class="comment"># 在 print() 函数中，通过 + 可以连接字符串</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python 自学笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>基础语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>0.print()函数</title>
+    <url>/20/09/28A/</url>
+    <content><![CDATA[<p>Python 基础语法系列开“🕳”。</p>
+<a id="more"></a>
+
+<h1 id="print"><a href="#print" class="headerlink" title="print()"></a>print()</h1><p>Python 的语言逻辑已经高度接近人类语言。</p>
+<p>Python 程序的执行过程大致如下：</p>
+<p>eg. </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&#x27;see what see!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="0">
+<li>我们使用 Python 向计算机发出指令；</li>
+<li>Python 解释器将代码编译成计算机能够理解的机器语言；</li>
+<li>计算机执行相应指令；</li>
+<li>输出指令执行后的结果。</li>
+</ol>
+<p>注意 <code>print(1 + 1)</code> 与 <code>print(&#39;see what see!&#39;)</code> 的区别：</p>
+<p>计算机可以很容易地读懂数学运算，因为数学运算是非常标准的，所以可以直接输入运算式子；但是对于文本信息，计算机不能对其进行运算，所以需要一个<strong>引号</strong>告诉计算机：不用运算，直接输出。</p>
+<h1 id="三引号"><a href="#三引号" class="headerlink" title="三引号"></a>三引号</h1><p>在 <code>print()</code> 中使用三引号可以让文本换行打印。</p>
+<p>eg.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">从明天起，做一个幸福的人</span></span><br><span class="line"><span class="string">喂马，劈柴，周游世界</span></span><br><span class="line"><span class="string">从明天起，关心粮食和蔬菜</span></span><br><span class="line"><span class="string">我有一所房子，面朝大海，春暖花开</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<blockquote>
+<p>从明天起，做一个幸福的人<br>喂马，劈柴，周游世界<br>从明天起，关心粮食和蔬菜<br>我有一所房子，面朝大海，春暖花开</p>
+</blockquote>
+]]></content>
       <categories>
         <category>Python 自学笔记</category>
       </categories>

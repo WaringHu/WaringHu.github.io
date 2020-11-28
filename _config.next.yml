@@ -584,7 +584,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active: valine
+  active: 
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -627,10 +627,10 @@ changyan:
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: true
-  appId: U2vDKDPkQrznPYSPhkw6c4V3-gzGzoHsz
-  appKey: 6Fn0FfJiLWDtQYYfOBbevrX2
+  appId: E7DA00uY38Ctlxn4cWACcywd-gzGzoHsz
+  appKey: beqGj3QtyImzysW1cExr0wbt
   serverURLs: # When the custom domain name is enabled, fill it in here
-  placeholder: Just go go # Comment box placeholder
+  placeholder: 留个言玩玩~ # Comment box placeholder
   avatar: mm # Gravatar style
   meta: [nick, mail, link] # Custom comment header
   pageSize: 10 # Pagination size
@@ -895,7 +895,7 @@ vendors:
   prism_line_numbers:
 
   # MathJax
-  mathjax: true
+  mathjax:
 
   # KaTeX
   katex:

@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"waringhu.com","root":"/","images":"/images","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="停留是刹那，转身即天涯">
 <meta property="og:type" content="website">
@@ -365,11 +365,6 @@
 <p>普通树可转换成相应的二叉树（该二叉树的根结点一定缺少右儿子），反之亦然。故而可以根据相应的转换方法去统计某一二叉树对应的普通树的度。普通树的度为其结点儿子数的最大值。相应的二叉树可利用二叉树的先序递归遍历算法创建。先序递归遍历建立二叉树的方法为：按照先序递归遍历的思想将对二叉树结点的抽象访问具体化为根据接收的数据决定是否产生该结点从而实现创建该二叉树的二叉链表存储结构。约定二叉树结点数据为单个大写英文字符。当接收的数据是字符”#”时表示该结点不需要创建，否则创建该结点。最后再统计该二叉树对应的森林中树的棵数。需要注意输入数据序列中的”#”字符的序列及个数关系，这会最终决定创建的二叉树的形态（序列里面允许无效字符但需要正确处理）。</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/982/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
@@ -470,11 +465,6 @@
 <p>普通树及其构成的森林均可转换成相应的二叉树，反之亦然。故而可以根据相应的转换方法去统计某一二叉树对应的森林中树的棵数。相应的二叉树可利用先序递归遍历算法创建。先序递归遍历建立二叉树的方法为：按照先序递归遍历的思想将对二叉树结点的抽象访问具体化为根据接收的数据决定是否产生该结点从而实现创建该二叉树的二叉链表存储结构。约定二叉树结点数据为单个大写英文字符。当接收的数据是字符”#”时表示该结点不需要创建，否则创建该结点。最后再统计该二叉树对应的森林中树的棵数。需要注意输入数据序列中的”#”字符和非”#”字符的序列及个数关系，这会最终决定创建的二叉树的形态（序列里面允许无效字符但需要正确处理）。</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/981/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
@@ -575,11 +565,6 @@
 <p>利用先序递归遍历算法创建二叉树并输出该二叉树的层次遍历序列。先序递归遍历建立二叉树的方法为：按照先序递归遍历的思想将对二叉树结点的抽象访问具体化为根据接收的数据决定是否产生该结点从而实现创建该二叉树的二叉链表存储结构。约定二叉树结点数据为单个大写英文字符。当接收的数据是字符”#”时表示该结点不需要创建，否则创建该结点。最后再输出创建完成的二叉树的层次遍历序列。需要注意输入数据序列中的”#”字符和非”#”字符的序列及个数关系，这会最终决定创建的二叉树的形态。</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/980/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
@@ -680,11 +665,6 @@
 <p>设有长度为n（n&gt;1）的顺序表R，将R中保存的序列循环左移P（0 &lt; P &lt; n）个位置，即将R中的数据由（x0,x1,…,xn-1）变换为(xp,xp+1,…,xn-1,x0,x1,…,xp-1)。如果p值不合法，输出“error！”。</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/1101/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
@@ -785,11 +765,6 @@
 <p>编程实现链栈的初始化、入栈、出栈和计算栈中元素个数等基本操作。（测试数据为整数。）</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/1046/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
@@ -890,11 +865,6 @@
 <p>假设有两个集合 A 和 B 分别用两个线性表 LA 和 LB 表示，即线性表中的数据元素即为集合中的成员。编程实现集合A和集合B的交运算。</p>
 </blockquote>
           <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/swustoj/1045/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
           <!--/noindex-->
         
       
